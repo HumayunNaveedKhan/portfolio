@@ -1,544 +1,970 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Humayun Khan - R&D Engineer Portfolio</title>
+    <meta name="description" content="Humayun Khan - R&D Engineer and Team Lead at HHRCM Lab, NCRA NEDUET, specializing in haptics, robotics, and industrial IoT.">
+    <meta name="keywords" content="Humayun Khan, R&D Engineer, Haptics, Robotics, Industrial IoT, NEDUET, NCRA, Innovation">
 
-    <title>Humayun Khan - Portfolio</title>
-<!--
-Elegance Template
-https://temp.latemo.com/tm-528-elegance
--->
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="css/fullpage.min.css">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/animate.css">
+    <!-- Custom CSS for Portfolio and Hero -->
+    <style>
+        .portfolio-item .swiper {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
 
-    <link rel="stylesheet" href="css/templatemo-style.css">
+        .portfolio-item .swiper-slide img,
+        .portfolio-item .swiper-slide video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    <link rel="stylesheet" href="css/responsive.css">
+        .portfolio-item .swiper-button-next,
+        .portfolio-item .swiper-button-prev {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
 
-    </head>
-    
-    <body>
-    
-    <div id="video">
-        <div class="preloader">
-            <div class="preloader-bounce">
-                <span></span>
-                <span></span>
-                <span></span>
+            .portfolio-item .swiper-button-next:after,
+            .portfolio-item .swiper-button-prev:after {
+                font-size: 16px;
+            }
+
+        .portfolio-item .swiper-pagination {
+            bottom: 10px;
+        }
+
+        .portfolio-item .swiper-pagination-bullet {
+            background: #fff;
+        }
+
+        .portfolio-item .swiper-pagination-bullet-active {
+            background: #007bff;
+        }
+
+        .portfolio-item video {
+            display: block;
+        }
+        /* Hero Section Background */
+        #hero {
+            background: url('assets/img/HapticVE.jpeg') no-repeat center center/cover;
+            position: relative;
+            min-height: 100vh;
+        }
+
+            #hero .container {
+                position: relative;
+                z-index: 2;
+                color: #fff;
+            }
+
+            #hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 1;
+            }
+        /* Section Spacing */
+        section {
+            padding: 60px 0;
+            position: relative;
+        }
+
+        #portfolio {
+            background: #f8f9fa;
+            overflow: hidden;
+            min-height: auto;
+            margin-bottom: 40px;
+        }
+
+        #contact {
+            background: #fff;
+            clear: both;
+            padding-top: 80px;
+        }
+
+        .section-divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 40px 0;
+        }
+        /* Contact Section */
+        .info-wrap {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+        /* Isotope Container */
+        .isotope-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .portfolio-item {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <h1 class="sitename">Humayun Khan</h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Expertise</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Achievements</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="#resume">Resume</a></li>
+                            <li><a href="#stats">Stats</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero section dark-background">
+            <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+                <h2>Humayun Khan</h2>
+                <p><span class="typed" data-typed-items="R&D Engineer, Team Lead NCRA-NEDUET, Founder & CTO – RobAutoStem & Haptronica, Industrial Automation Architect, Embedded Systems Innovator, IIoT & Haptics Expert, Robotics Consultant, International Teleoperator"></span></p>
+            </div>
+        </section><!-- /Hero Section -->
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
+                    <div class="col-md-6">
+                        <div class="row justify-content-between gy-4">
+                            <div class="col-lg-5">
+                                <img src="assets/img/profile-img.jpg" class="img-fluid" alt="Humayun Khan">
+                            </div>
+                            <div class="col-lg-7 about-info">
+                                <p><strong>Name: </strong> <span>Humayun Khan</span></p>
+                                <p><strong>Profile: </strong> <span>Electrical & Computer Systems Engineer, Team Lead at HHRCM Lab, NCRA NEDUET</span></p>
+                                <p><strong>Email: </strong> <span>humayunnaveedkhan@gmail.com | humayunkhan@neduet.edu.pk</span></p>
+                                <p><strong>Contact no: </strong> <span>+92 316 0121324</span></p>
+                            </div>
+                        </div>
+                        <div class="skills-content skills-animation">
+                            <h5>Skills</h5>
+                            <div class="progress">
+                                <span class="skill"><span>Haptics & Robotics</span> <i class="val">92%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <span class="skill"><span>Embedded Systems</span> <i class="val">88%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <span class="skill"><span>Industrial IoT</span> <i class="val">90%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <span class="skill"><span>Cloud Computing</span> <i class="val">85%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <span class="skill"><span>Cybersecurity</span> <i class="val">80%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about-me">
+                            <h4>About Me</h4>
+                            <p>
+                                I am an Electrical and Computer Systems Engineer with a Master’s in Computer Networks and System Security from NED University. As Team Lead at HHRCM Lab, NCRA NEDUET, I drive indigenous innovation in haptics, human-robot interaction, embedded systems, and industrial IoT.
+                            </p>
+                            <p>
+                                My journey includes leading R&D for products like the NED-Smart Tape Measure, Industrial Pull Tester, and MDOF Robotic Arm, commercialized with partners like J&P Coats, Patel Hospital, and E-BEX. I’ve filed six patents, published in MDPI, and secured grants from NCRA, SRSP, and NRPU.
+                            </p>
+                            <p>
+                                As CTO and Co-Founder of Haptronica and RobAutoStem, incubated under NIC Karachi, I’ve won PKR 1M at Sindh Innovative Startups Showcase 2025 and secured $25,000 in Google Cloud credits and $10,000 in AWS credits to scale our solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /About Section -->
+        <!-- Resume Section -->
+        <section id="resume" class="resume section">
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Resume</h2>
+                <p>Leading indigenous innovation in haptics, robotics, and IoT for industrial and technological advancement</p>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="resume-title">Summary</h3>
+                        <div class="resume-item pb-0">
+                            <h4>Humayun Khan</h4>
+                            <p><em>Electrical and Computer Systems Engineer with expertise in haptics, robotics, and industrial IoT, driving end-to-end product design, system integration, and commercialization at HHRCM Lab, NCRA NEDUET.</em></p>
+                            <ul>
+                                <li>HHRCM Lab, NCRA NEDUET, Karachi, Pakistan</li>
+                                <li>+92 316 0121324</li>
+                                <li>humayunnaveedkhan@gmail.com</li>
+                            </ul>
+                        </div>
+                        <h3 class="resume-title">Education</h3>
+                        <div class="resume-item">
+                            <h4>Master of Engineering, Computer Networks and System Security</h4>
+                            <h5>2023 - 2025</h5>
+                            <p><em>NED University of Engineering and Technology, Karachi, Pakistan</em></p>
+                            <p>Thesis: Controlled Utilization of Optimized Network Protocol for Network Jitter Compensation in Haptic Teleoperation Systems (CGPA: 3.85/4)</p>
+                        </div>
+                        <div class="resume-item">
+                            <h4>Bachelor of Engineering, Electrical and Computer Systems</h4>
+                            <h5>2017 - 2021</h5>
+                            <p><em>NED University of Engineering and Technology, Karachi, Pakistan</em></p>
+                            <p>FYDP: Telepresence and Designing Interface for Communication (CGPA: 3.6/4)</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="resume-title">Professional Experience</h3>
+                        <div class="resume-item">
+                            <h4>Team Lead, HHRCM Lab, NCRA NEDUET</h4>
+                            <h5>May 2023 - Present</h5>
+                            <p><em>National Centre of Robotics and Automation, Karachi, Pakistan</em></p>
+                            <ul>
+                                <li>Led design, development, and deployment of indigenous solutions like NED-Smart Tape Measure and Industrial Pull Tester</li>
+                                <li>Managed procurement, project planning, Gantt charts, and technical documentation</li>
+                                <li>Demonstrated products to provincial leadership, UNDP, and at APTEx'25</li>
+                            </ul>
+                        </div>
+                        <div class="resume-item">
+                            <h4>Research Engineer/Lead, HHRCM Lab, NCRA NEDUET</h4>
+                            <h5>July 2024 - Jan 2025</h5>
+                            <p><em>Under Sindh Research Support Program, Karachi, Pakistan</em></p>
+                            <ul>
+                                <li>Developed Smart Industrial Liquid Level and Smart Oxygen Analyzer</li>
+                                <li>Collaborated with industry partners like J&P Coats for commercialization</li>
+                            </ul>
+                        </div>
+                        <div class="resume-item">
+                            <h4>Robotic Consultant, NCRA NEDUET</h4>
+                            <h5>April 2024 - May 2024</h5>
+                            <p><em>Under NRPU Grant, Karachi, Pakistan</em></p>
+                            <ul>
+                                <li>Consulted on 5DOF robotic arm for industrial packaging with 3-phase AC servo systems</li>
+                                <li>Contributed to motion control and modular integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Resume Section -->
+        <!-- Services Section -->
+        <section id="services" class="services section">
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Expertise</h2>
+                <p>Comprehensive technical skills driving innovation in R&D and engineering</p>
+            </div>
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="bi bi-activity"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                                <h3>Haptics & Teleoperation</h3>
+                            </a>
+                            <p>Expert in CHAI3D, OpenHaptics, and bilateral control for haptic virtual environments and teleoperation systems.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="bi bi-broadcast"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                                <h3>Embedded Systems</h3>
+                            </a>
+                            <p>Proficient in ESP32, STM32, FreeRTOS, and BareMetal for real-time control and sensor integration.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="bi bi-easel"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                                <h3>Industrial IoT</h3>
+                            </a>
+                            <p>Designed SCADA, PLC, and cloud-integrated solutions using MQTT, AWS, and EtherCAT for real-time monitoring.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="bi bi-bounding-box-circles"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                                <h3>Robotics & Mechatronics</h3>
+                            </a>
+                            <p>Developed MDOF robotic arms and gait control for humanoids using ORiN2 SDK and precision feedback.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="bi bi-calendar4-week"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                                <h3>Cloud Computing</h3>
+                            </a>
+                            <p>Skilled in AWS, Firebase, and Google Sheets API for data logging, visualization, and real-time dashboards.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="bi bi-chat-square-text"></i>
+                            </div>
+                            <a href="#" class="stretched-link">
+                                <h3>Cybersecurity</h3>
+                            </a>
+                            <p>Experienced in SIEM, MITRE ATT&CK, and Wireshark for network defense and anomaly detection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Services Section -->
+        <!-- Stats Section -->
+        <section id="stats" class="stats section accent-background">
+            <img src="assets/img/portfolio/stats-bg.jpg" alt="" data-aos="fade-in">
+            <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter">6</span>
+                            <p>Patents Filed</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1" class="purecounter">11</span>
+                            <p>Products Developed</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter">5</span>
+                            <p>Publications</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="stats-item text-center w-100 h-100">
+                            <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter">3</span>
+                            <p>Awards Won</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Stats Section -->
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio section">
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Portfolio</h2>
+                <p>Indigenous innovations driving industrial and technological advancement</p>
+            </div>
+            <div class="container">
+                <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".filter-iot">IoT</li>
+                        <li data-filter=".filter-robotics">Robotics</li>
+                        <li data-filter=".filter-medical">Medical</li>
+                        <li data-filter=".filter-industrial">Industrial</li>
+                    </ul>
+                    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+                        <!-- NED-Smart Tape Measure (Images and Video) -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-iot">
+                            <div class="swiper portfolio-swiper-ned-smt">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/ned-smt.jpg" class="img-fluid" alt="NED-Smart Tape Measure">
+                                    </div>
+                                    <div class="swiper-slide" data-type="video">
+                                        <video controls muted playsinline title="NED-Smart Tape Measure Demo">
+                                            <source src="assets/img/portfolio/NED SMT -Soorty.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/STM 1.jpg" class="img-fluid" alt="NED-Smart Tape Measure">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>NED-Smart Tape Measure</h4>
+                                <p>IoT-enabled device for precision measurement, cloud logging, and visualization. Patent filed; deployed commercially.</p>
+                                <a href="assets/img/portfolio/ned-smt.jpg" title="NED-Smart Tape Measure" data-gallery="portfolio-gallery-iot" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                        <!-- Generalized Haptic Teleoperation (Image and Video) -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-robotics">
+                            <div class="swiper portfolio-swiper-haptic-teleop">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/GTS.jpg" class="img-fluid" alt="Generalized Haptic Teleoperation">
+                                    </div>
+                                    <div class="swiper-slide" data-type="video">
+                                        <video controls muted playsinline title="Generalized Haptic Teleoperation Demo">
+                                            <source src="assets/img/portfolio/ITO.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>Generalized Haptic Teleoperation</h4>
+                                <p>Developed a modular system enabling teleoperation of haptic devices over varied networks with adaptive packet control. Successfully demonstrated intercontinental teleoperation.</p>
+                                <a href="assets/img/portfolio/GTS.jpg" title="Generalized Haptic Teleoperation" data-gallery="portfolio-gallery-robotics" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                        <!-- Haptic Virtual Environment (Images and Videos) -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-robotics">
+                            <div class="swiper portfolio-swiper-haptic-ve">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/Haptic Virtual Environments.png" class="img-fluid" alt="Haptic Virtual Environment">
+                                    </div>
+                                    <div class="swiper-slide" data-type="video">
+                                        <video controls muted playsinline title="Haptic Virtual Environment Demo">
+                                            <source src="assets/img/portfolio/iron man heart.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <div class="swiper-slide" data-type="video">
+                                        <video controls muted playsinline title="Haptic Virtual Environment Demo">
+                                            <source src="assets/img/portfolio/magnets haptic.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/HapticVE..jpg" class="img-fluid" alt="Haptic Virtual Environment">
+                                    </div>
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/Haptic VE 2.jpg" class="img-fluid" alt="Haptic Virtual Environment">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>Haptic Virtual Environment</h4>
+                                <p>Designed immersive virtual environments using CHAI3D and OpenHaptics for training, AR/VR, and STEM education.</p>
+                                <a href="assets/img/portfolio/Haptic Virtual Environments.png" title="Haptic Virtual Environment" data-gallery="portfolio-gallery-robotics" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                        <!-- Smart Industrial Liquid Level (Images) -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-industrial">
+                            <div class="swiper portfolio-swiper-ned-sill">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/ned-sill-02.png" class="img-fluid" alt="Smart Industrial Liquid Level">
+                                    </div>
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/ned-sill-01.png" class="img-fluid" alt="Smart Industrial Liquid Level">
+                                    </div>
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/luckytex.jpg" class="img-fluid" alt="Smart Industrial Liquid Level">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>Smart Industrial Liquid Level</h4>
+                                <p>Real-time flow and volume monitoring with cloud dashboards. Patent filed; commercialized to J&P Coats.</p>
+                                <a href="assets/img/portfolio/ned-sill-02.png" title="Smart Industrial Liquid Level" data-gallery="portfolio-gallery-industrial" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                        <!-- Industrial Pull Tester (Images) -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-industrial">
+                            <div class="swiper portfolio-swiper-pull-tester">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/Suture.png" class="img-fluid" alt="Industrial Pull Tester">
+                                    </div>
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/SPT 1.jpg" class="img-fluid" alt="Industrial Pull Tester">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>Industrial Pull Tester</h4>
+                                <p>Tensile testing solution; Patent No. 144343 granted by IPO Pakistan; commercialized via RobAutoStem.</p>
+                                <a href="assets/img/portfolio/Suture.png" title="Industrial Pull Tester" data-gallery="portfolio-gallery-industrial" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                        <!-- MDOF Robotic Arm (Images and Video) -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-robotics">
+                            <div class="swiper portfolio-swiper-mdof-arm">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/mdof ra.jpg" class="img-fluid" alt="MDOF Robotic Arm">
+                                    </div>
+                                    <div class="swiper-slide" data-type="video">
+                                        <video controls muted playsinline title="MDOF Robotic Arm Demo">
+                                            <source src="assets/img/portfolio/NED Industrial Robotic Arm 1080p LScape.mkv" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/teleoperated denso.jpg" class="img-fluid" alt="MDOF Robotic Arm">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>MDOF Robotic Arm</h4>
+                                <p>Multi-DOF arm for automation and haptic research. Funded by NRPU (PKR 8.8M); pilot tested.</p>
+                                <a href="assets/img/portfolio/NED Industrial Robotic Arm 1080p LScape.mkv" title="MDOF Robotic Arm" data-gallery="portfolio-gallery-robotics" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                        <!-- Smart Oxygen Analyzer (Images) -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical">
+                            <div class="swiper portfolio-swiper-oxygen-analyzer">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/Oxygen Analzer 1.jpg" class="img-fluid" alt="Smart Oxygen Analyzer">
+                                    </div>
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/Oxygen analyzer gp.jpg" class="img-fluid" alt="Smart Oxygen Analyzer">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>Smart Oxygen Analyzer</h4>
+                                <p>Real-time oxygen measurement for medical use. Patent filed; tested at Patel Hospital.</p>
+                                <a href="assets/img/portfolio/Oxygen Analzer 1.jpg" title="Smart Oxygen Analyzer" data-gallery="portfolio-gallery-medical" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                        <!-- E-IoT Energy Monitoring (Image) -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-iot">
+                            <div class="swiper portfolio-swiper-e-iot">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/eiot-1.jpg" class="img-fluid" alt="E-IoT Energy Monitoring">
+                                    </div>
+                                </div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/eiot-2.jpg" class="img-fluid" alt="E-IoT Energy Monitoring">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>E-IoT Energy Monitoring</h4>
+                                <p>IoT solution for energy and health tracking with cloud dashboards. Patent filed; testbed ready.</p>
+                                <a href="assets/img/portfolio/eiot-2.jpg" title="E-IoT Energy Monitoring" data-gallery="portfolio-gallery-iot" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                        <!-- CPAP Device (Image) -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-medical">
+                            <div class="swiper portfolio-swiper-cpap">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/cpap.png" class="img-fluid" alt="CPAP Device">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>CPAP Device</h4>
+                                <p>Smart respiratory support with IoT connectivity. Patent filed; funded by SRSP (PKR 2.4M).</p>
+                                <a href="assets/img/portfolio/cpap.png" title="CPAP Device" data-gallery="portfolio-gallery-medical" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                        <!-- MeterVision (Image) -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-iot">
+                            <div class="swiper portfolio-swiper-metervision">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/metervision-1.jpg" class="img-fluid" alt="MeterVision">
+                                    </div>
+                                </div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/metervision-2.jpg" class="img-fluid" alt="MeterVision">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>MeterVision</h4>
+                                <p>AI-powered analog meter reader with cloud logging. Designed for utility and automation.</p>
+                                <a href="assets/img/portfolio/metervision-1.jpg" title="MeterVision" data-gallery="portfolio-gallery-iot" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                        <!-- Shake Table (Images and Video) -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-robotics">
+                            <div class="swiper portfolio-swiper-shake-table">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/NED - Shake Table.jpg" class="img-fluid" alt="Shake Table">
+                                    </div>
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/NED - Shake Table 2.jpg" class="img-fluid" alt="Shake Table">
+                                    </div>
+                                    <div class="swiper-slide" data-type="video">
+                                        <video controls muted playsinline title="Shake Table Demo">
+                                            <source src="assets/img/portfolio/shaketable-vid.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <div class="swiper-slide" data-type="video">
+                                        <video controls muted playsinline title="Shake Table Demo">
+                                            <source src="assets/img/portfolio/shaketable-vid.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>Shake Table</h4>
+                                <p>Indigenous design for structural simulation. Patent filed; demonstrated for UNDP and CM Balochistan.</p>
+                                <a href="assets/img/portfolio/NED - Shake Table.jpg" title="Shake Table" data-gallery="portfolio-gallery-robotics" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                        <!-- Formula Electric Car NED EEN (Image) -->
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-industrial">
+                            <div class="swiper portfolio-swiper-electric-car">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/Formula Electric Car NED EEN.jpg" class="img-fluid" alt="Formula Electric Car NED EEN">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>Formula Electric Car NED EEN</h4>
+                                <p>Led electrical design for power distribution, achieving 4th place globally in Formula SAE-A 2020 AustralAsia.</p>
+                                <a href="assets/img/portfolio/Formula Electric Car NED EEN.jpg" title="Formula Electric Car NED EEN" data-gallery="portfolio-gallery-industrial" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Portfolio Section -->
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Contact</h2>
+                <p>Reach out to collaborate on innovative R&D and engineering solutions</p>
+            </div>
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row gy-5">
+                        <div class="col-lg-4">
+                            <div class="info-item d-flex align-items-center">
+                                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                <div>
+                                    <h3>Address</h3>
+                                    <p>HHRCM Lab, NCRA NEDUET, Karachi, Pakistan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="info-item d-flex align-items-center">
+                                <i class="bi bi-telephone flex-shrink-0"></i>
+                                <div>
+                                    <h3>Call Me</h3>
+                                    <p>+92 316 0121324</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="info-item d-flex align-items-center">
+                                <i class="bi bi-envelope flex-shrink-0"></i>
+                                <div>
+                                    <h3>Email Me</h3>
+                                    <p>humayunnaveedkhan@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="social-links d-flex justify-content-center mt-4">
+                            <a href="https://www.linkedin.com/in/humayunnaveedkhan" target="_blank"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://www.facebook.com/NCRANEDUET" target="_blank"><i class="bi bi-facebook"></i></a>
+                            <a href="https://humayunnaveedkhan.github.io/portfolio" target="_blank"><i class="bi bi-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Contact Section -->
+
+    </main>
+
+    <footer id="footer" class="footer accent-background">
+        <div class="container">
+            <div class="copyright text-center">
+                <p>© <span>Copyright</span> <strong class="px-1 sitename">Humayun Khan</strong> <span>All Rights Reserved</span></p>
+            </div>
+            <div class="social-links d-flex justify-content-center">
+                <a href="https://www.linkedin.com/in/humayunnaveedkhan" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.facebook.com/NCRANEDUET" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="https://humayunnaveedkhan.github.io/portfolio" target="_blank"><i class="bi bi-github"></i></a>
+            </div>
+            <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
             </div>
         </div>
+    </footer>
 
-        <header id="header">
-            <div class="container-fluid">
-                <div class="navbar">
-                    <a href="#" id="logo" title="HK by Humayun Khan">
-                        HK
-                    </a>
-                    <div class="navigation-row">
-                        <nav id="navigation">
-                            <button type="button" class="navbar-toggle"> <i class="fa fa-bars"></i> </button>
-                            <div class="nav-box navbar-collapse">
-                                <ul class="navigation-menu nav navbar-nav navbars" id="nav">
-                                    <li data-menuanchor="slide01" class="active"><a href="#slide01">Home</a></li>
-                                    <li data-menuanchor="slide02"><a href="#slide02">About Me</a></li>
-                                    <li data-menuanchor="slide03"><a href="#slide03">Expertise</a></li>
-                                    <li data-menuanchor="slide04"><a href="#slide04">My Specialities </a></li>
-                                    <li data-menuanchor="slide05"><a href="#slide05">My Projects</a></li>
-                                    <!--<li data-menuanchor="slide06"><a href="#slide06">Testimonials</a></li>-->
-                                    <li data-menuanchor="slide07"><a href="#slide07">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-        <video autoplay muted loop id="myVideo">
-          <source src="images/TouchX-Touch Teleoperation.mp4" type="video/mp4">
-        </video>
+    <!-- Preloader -->
+    <div id="preloader"></div>
 
-        <div id="fullpage" class="fullpage-default">
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-            <div class="section animated-row" data-section="slide01">
-                <div class="section-inner">
-                    <div class="welcome-box">
-                        <p class="animate" data-animate="fadeInUp">Hello😊, I am</p>
-                        <h3 class="welcome-first animate" data-animate="fadeInDown"><strong><b>Humayun Khan</b></strong></h3>                        <!--<h3 class="welcome-title animate" data-animate="fadeInUp">My Portfolio </h3>-->
-                        <p class="animate" data-animate="fadeInUp">Research and Design Engineer</p>
-                        <div class="scroll-down next-section animate data-animate="fadeInUp""><img src="images/mouse-scroll.png" alt=""><span>Scroll Down</span></div>
-                    </div>
-                </div>
-            </div>
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
 
-            <div class="section animated-row" data-section="slide02">
-                <div class="section-inner">
-                    <div class="about-section">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 wide-col-laptop">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="about-contentbox">
-                                            <div class="animate" data-animate="fadeInUp">
-                                                <span>About Me</span>
-                                                <h2>Who am i?</h2>
-                                                <p>I am an adept Electrical and Computer Systems Engineer specializing in Haptics, Human-Robotics, Communication Networks, Industrial IoT, and Automation. Committed to spearheading technological advancements translating into practical applications. Demonstrated expertise in innovative product development, robust grants management, and successful industry collaboration.</p>
-                                            </div>
-                                            <div class="facts-list owl-carousel">
-                                                <div class="item animate" data-animate="fadeInUp">
-                                                    <div class="counter-box">
-                                                        <i class="fa fa-database counter-icon" aria-hidden="true"></i><span class="count-number">04</span> Patents Filled
-                                                    </div>
-                                                </div>
-                                                <div class="item animate" data-animate="fadeInUp">
-                                                    <div class="counter-box">
-                                                        <i class="fa fa-graduation-cap counter-icon" aria-hidden="true"></i><span class="count-number">02</span> Degrees
-                                                    </div>
-                                                </div>
-                                                <div class="item animate" data-animate="fadeInUp">
-                                                    <div class="counter-box">
-                                                        <i class="fa fa-desktop counter-icon" aria-hidden="true"></i><span class="count-number">03</span> Working Years
-                                                    </div>
-                                                </div>
-                                                <div class="item animate" data-animate="fadeInUp">
-                                                    <div class="counter-box">
-                                                        <i class="fa fa-support counter-icon" aria-hidden="true"></i><span class="count-number">10</span> Team Members
-                                                    </div>
-                                                </div>
-                                                <div class="item animate" data-animate="fadeInUp">
-                                                    <div class="counter-box">
-                                                        <i class="fa fa-certificate counter-icon" aria-hidden="true"></i><span class="count-number">06</span> Certificates
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <figure class="about-img animate" data-animate="fadeInUp"><img src="images/Humayun Khan 1.jpg" class="rounded" alt=""></figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section animated-row" data-section="slide03">
-                <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <span>Expertise</span>
-                                <h2>What I Do?</h2>
-                            </div>
-                            <div class="services-section">
-                                <div class="services-list owl-carousel">
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-support" aria-hidden="true"></i></span>
-                                            <h3>Haptics, Virtual Environments & Industrial Tele-robtics</h3>
-                                            <p>Proficient in Haptics Teleoperation, Immersive Haptic Virtual Environments and Industrial Tele-Robotics, demonstrated through groundbreaking intercontinental haptic teleoperation experiment between HHRCM, NEDUET, and IGS, University of Innsbruck. Endorsed for designing immersive, tactile interfaces vital for diverse industries and research.</p>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-desktop" aria-hidden="true"></i></span>
-                                            <h3>Industrial IoT & Automation</h3>
-                                            <p>Proficient in leading the design and development of IoT-enabled products including a digital tape measure, Industrial Pull tester, smart oxygen analyzer, and Battery Management System for Electric Vehicles, showcasing visionary leadership in technological innovation across diverse industries.</p>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-database" aria-hidden="true"></i></span>
-                                            <h3>Product Design & Development</h3>
-                                            <p>Professional in adeptly leading product design and development, spearheading diverse domestic IoT-enabled innovations such as the industrial pull tester, smart oxygen analyzer, digital tape measure, and EV battery management system. Prominently steering the entire product lifecycle, from ideation to successful implementation, delivering impactful solutions that elevate industry standards.</p>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-desktop" aria-hidden="true"></i></span>
-                                            <h3>Computer Networks & System Security</h3>
-                                            <p>Expertise in Computer Networks & System Security, demonstrated through robust designs and implementation of secure network architectures. Recognized for adeptness in safeguarding critical systems and data, ensuring resilient cyber defenses in complex environments. </p>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
-                                            <h3>Heathcare Mechatronics and Robotics</h3>
-                                            <p>Instrumental in crafting transformative healthcare solutions like the Smart Oxygen Analyzer, CPAP machine, and Oxygen Concentrator, showcasing adeptness in innovative medical device design. Played a significant role in the indigenous development of the NED Ventilator, under the esteemed leadership of Dr. Riaz Uddin.</p>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-bookmarks" aria-hidden="true"></i></span>
-                                            <h3>Academic and Research Writing</h3>
-                                            <p>Author of 12 publications, adept in national and international grant writing, with 4 patented innovations. Engaged as a reviewer for IEEE conferences (Haptic Symposium, Euro Haptics), robotics conferences (ICRAI), and esteemed journals (IEEE RA-L, IEEC, IBCAST, MDPI). Committed to evaluating cutting-edge research contributions.</p>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="service-box">
-                                            <span class="service-icon"><i class="fa fa-database" aria-hidden="true"></i></span>
-                                            <h3>Electric Vehicles</h3>
-                                            <p>Expertise in Electric Vehicles (EVs), with a focus on integrating advanced technologies for sustainable transportation solutions. Notably, instrumental in the development of a Battery Management System tailored for EVs, contributing to the efficient and reliable performance of these vehicles. Recognized for driving innovation in the EV sector towards a greener future.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Custom JS for Portfolio Carousels -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Typed.js for Hero Section
+            new Typed('.typed', {
+                strings: [
+                    "R&D Engineer",
+                    "Team Lead NCRA-NEDUET",
+                    "Founder & CTO – RobAutoStem & Haptronica",
+                    "Industrial Automation Architect",
+                    "Embedded Systems Innovator",
+                    "IIoT & Haptics Expert",
+                    "Robotics Consultant",
+                    "International Teleoperator"
+                ],
+                typeSpeed: 100,
+                backSpeed: 50,
+                backDelay: 2000,
+                //loopDelay: 2500,
+                smartBackspace: true,
+                //loop: true,
+                //loopCount: Infinity
+            });
 
-            <div class="section animated-row" data-section="slide04">
-                <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-7 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <span>My Specialities</span>
-                                <h2>What i’m good?</h2>
-                            </div>
-                            <div class="skills-row animate" data-animate="fadeInDown">
-                                <div class="row">
-                                    <div class="col-md-8 offset-md-2">   
-                                        <div class="skill-item">
-                                            <h6>Project Management</h6>
-                                            <div class="skill-bar">
-                                                <span>90%</span>
-                                                <div class="filled-bar-2"></div>
-                                            </div>          
-                                        </div>
-                                        <div class="skill-item">
-                                            <h6>Leadership</h6>
-                                            <div class="skill-bar">
-                                                <span>90%</span>
-                                                <div class="filled-bar-2"></div>
-                                            </div>          
-                                        </div>
-                                        <div class="skill-item">
-                                            <h6>Product Design and Development</h6>
-                                            <div class="skill-bar">
-                                                <span>80%</span>
-                                                <div class="filled-bar"></div>
-                                            </div>          
-                                        </div>
-                                        <div class="skill-item">
-                                            <h6>IoT & Programming</h6>
-                                            <div class="skill-bar">
-                                                <span>80%</span>
-                                                <div class="filled-bar"></div>
-                                            </div>          
-                                        </div>   
-                                        <div class="skill-item last-skill">
-                                            <h6>Problem Solving & Communication</h6>
-                                            <div class="skill-bar">
-                                                <span>90%</span>
-                                                <div class="filled-bar-2"></div>
-                                            </div> 
-                                          <!--
-                                         <div class="skill-item last-skill">
-                                            <h6>Communication Networks and System Security</h6>
-                                            <div class="skill-bar">
-                                            <span>90%</span>
-                                            <div class="filled-bar-2"></div>
-                                            </div>--> 
-                                        </div>                   
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            // Portfolio Carousels: Dynamic Video Duration
+            function initializePortfolioSwiper(selector) {
+                const defaultImageDelay = 5000; // 5 seconds for images
+                const slides = document.querySelectorAll(selector + ' .swiper-slide');
+                const hasMultipleSlides = slides.length > 1;
 
-            <div class="section animated-row" data-section="slide06">
-                <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <span>My Projects</span>
-                                <h2>what i’ve done?</h2>
-                            </div>
-                            <div class="gallery-section">
-                                <div class="gallery-list owl-carousel">
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                <img src="images/STM 1.jpg" alt="">
-                                                <img src="images/STM 2.jpg" alt="">
-                                            </div>
-                                            <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                <h4>Project N.1</h4>
-                                                <h4>IoT-Enabled Digital Tape Measure Device</h4>
-                                                <p>Designed a network-enabled device merging precise measurement with digital capabilities</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                <img src="images/GTS1.jpg" alt="">
-                                                <img src="images/GTS2.jpg" alt="">
-                                            </div>
+                let swiperInstance = new Swiper(selector, {
+                    loop: hasMultipleSlides,
+                    speed: 600,
+                    slidesPerView: 1,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                        renderBullet: function (index, className) {
+                            return hasMultipleSlides ? '<span class="' + className + '"></span>' : '';
+                        }
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                        disabledClass: 'swiper-button-disabled',
+                        hiddenClass: 'swiper-button-hidden'
+                    },
+                    autoplay: {
+                        delay: defaultImageDelay,
+                        disableOnInteraction: false
+                    },
+                    on: {
+                        init: function () {
+                            // Hide navigation and pagination for single slide
+                            if (!hasMultipleSlides) {
+                                this.el.querySelector('.swiper-button-next').style.display = 'none';
+                                this.el.querySelector('.swiper-button-prev').style.display = 'none';
+                                this.el.querySelector('.swiper-pagination').style.display = 'none';
+                            }
+                        },
+                        slideChange: function () {
+                            // Pause all videos
+                            const videos = document.querySelectorAll(selector + ' video');
+                            videos.forEach(video => {
+                                video.pause();
+                                video.currentTime = 0; // Reset to start
+                            });
 
-                                            <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                <h4>Project N.2</h4>
-                                                <black>
-                                                <h4><strong>Generalized Haptic Teleoperation Setup</strong></h4>
-                                                <p>Developed a Generalized Haptic Teleoperation Algorithm for Haptic and Robotic devices, that enables them to teleoperate on any network, anywhere, anytime.</p></black>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                <img src="images/SCM 1.jpg" alt="">
-                                            </div>
-                                            <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                <h4>Project N.3</h4>
-                                                <black>
-                                                <h4><strong>Smart Cammeasure</strong></h4>
-                                                <p>Developed an intelligent measuring solution utilizing Python, AI, and ML algorithms.</p></black>
-                                            </div>  
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                <img src="images/teleoperated denso.jpg" alt="">
-                                                <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                    <h4>Project N.4</h4>
-                                                    <black>
-                                                    <h4><strong>Industrial Telerobotics</strong></h4>
-                                                    <p>Engineered a universal teleoperation algorithm tailored for industrial robots like Denso, Mitsubishi, and cutting-edge Phantom models. Proficiently managed diverse robotic systems, ensuring seamless control across any network, disregarding location or time constraints.</p></black>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                
-                                                <img src="images/HapticVE.jpeg" alt="">
-                                                <img src="images/HapticVE..jpg" alt="">
-                                            
-                                                <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                    <h4>Project N.5</h4>
-                                                    <black>
-                                                    <h4><strong>Immersive Haptic Virtual Environments</strong></h4>
-                                                    <p>Led the development of immersive Haptic Virtual Environments, pushing the boundaries of sensory engagement. Leveraging expertise in CHAI3D, Force Dimension, and Open Haptics frameworks, I orchestrated the creation of interactive, lifelike environments. These immersive setups redefine user experiences, seamlessly integrating tactile feedback for heightened realism in diverse applications</p></black>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                <img src="images/SPT 1.jpg" alt="">
-                                                <img src="images/SPT 2.png" alt="">
-                                                <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                    <h4>Project N.6</h4>
-                                                    <black>
-                                                    <h4><strong>Industrial Pull Tester</strong></h4>
-                                                    <p>Developed an advanced Industrial Pull Tester tailored for assessing material strengths across textile, automotive, and process industries. This specialized apparatus ensured precise evaluations, contributing to improved quality control and reliability in the manufacturing processes specific to these industries.</p></black>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            // Determine delay based on slide type
+                            const activeSlide = this.slides[this.activeIndex];
+                            const slideType = activeSlide.getAttribute('data-type');
+                            let delay;
 
+                            if (slideType === 'video') {
+                                const activeVideo = activeSlide.querySelector('video');
+                                activeVideo.play().catch(error => console.log('Video play error:', error));
+                                // Use video duration or fallback to 10 seconds if duration is not available
+                                delay = (activeVideo.duration || 10) * 1000;
+                            } else {
+                                delay = defaultImageDelay;
+                            }
 
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                <img src="images/Oxygen analyzer gp.jpg" alt="">
-                                                <img src="images/Oxygen Analzer 1.jpg" alt="">
+                            // Update autoplay delay
+                            this.autoplay.stop();
+                            this.params.autoplay.delay = delay;
+                            this.autoplay.start();
+                        }
+                    }
+                });
 
-                                                <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                    <h4>Project N.7</h4>
-                                                    <black>
-                                                    <h4><strong>Smart Oxygen Analyzer</strong></h4>
-                                                    <p>Developed a state-of-the-art Smart Oxygen Analyzer for real-time calculation of air oxygen percentage. This groundbreaking device, developed under supervision of Dr. Riaz Uddin, delivers precise and instant measurements, contributing to enhanced accuracy in determining oxygen levels in various environments and applications.</p></black>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                <img src="images/EV Battery management.png" alt="">
-                                                <img src="images/EV 2.jpg" alt="">
-                                                <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                    <h4>Project N.8</h4>
-                                                    <black>
-                                                    <h4><strong>LiFePO4 Battery Management system for Electric Vehicles</strong></h4>
-                                                    <p>Addressing the EV industry's energy management demand, I developed an industrial Battery Management System (BMS) for LiFePO4 batteries. The specialized product ensured highly precised voltage fluctuations and displayed on the optimzed dashboard of the EV, marking a pivotal advancement in EV energy management.</p></black>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                <img src="images/Formula Electric Car NED EEN.jpg" alt="">
-                                                <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                    <h4>Project N.9</h4>
-                                                    <black>
-                                                    <h4><strong>Formula Electric Car NED</strong></h4>
-                                                    <p>To propel the Formula Electric Car's prowess, I led the electrical design initiatives, implementing intricate systems to optimize power distribution and enhance performance for the 2020 AustralAsia competition. The meticulous crafting of advanced circuitry and innovative solutions fortified our vehicle's efficiency on the track, culminating in our team's proud achievement of securing the 4th position globally. This success underscores the impact of my electrical design contributions, serving as a cornerstone in our competitive edge and triumph in this esteemed competition.</p></black>
-    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--<div class="item animate" data-animate="fadeInUp">
-                                        <div class="portfolio-item">
-                                            <div class="thumb">
-                                                <img src="images/20230726_120020.jpg" alt="">
-                                                <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                    <h4>Project N.10</h4>
-                                                    <black>
-                                                    <h4><strong></strong></h4>
-                                                    <p>Developed an advanced Industrial Pull Tester tailored for assessing material strengths across textile, automotive, and process industries. This specialized apparatus ensured precise evaluations, contributing to improved quality control and reliability in the manufacturing processes specific to these industries.</p></black>
-    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-<!--
-            <div class="section animated-row" data-section="slide05">
-                <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <span>TESTIMONIALS</span>
-                                <h2>what THEY SAY?</h2>
-                            </div>
-                            <div class="col-md-8 offset-md-2">
-                                <div class="testimonials-section">
-                                    <div class="testimonials-slider owl-carousel">
-                                        <div class="item animate" data-animate="fadeInUp">
-                                            <div class="testimonial-item">
-                                                <div class="client-row">
-                                                    <img src="images/profile-01.jpg" class="rounded-circle" alt="profile 1">
-                                                </div>
-                                                <div class="testimonial-content">
-                                                    <h4>Sandar</h4>
-                                                    <p>"Ut varius leo eu mauris lacinia, eleifend posuere urna gravida. Aenean a mattis lacus."</p>
-                                                    <span>Managing Director</span>
-                                                </div>                                           
-                                            </div>
-                                        </div>
-                                        <div class="item animate" data-animate="fadeInUp">
-                                            <div class="testimonial-item">
-                                                <div class="client-row">
-                                                    <img src="images/profile-01.jpg" class="rounded-circle" alt="profile 2">
-                                                </div>
-                                                <div class="testimonial-content">
-                                                    <h4>Shinn</h4>
-                                                    <p>"Nam iaculis, leo nec facilisis sollicitudin, dui massa tempus odio, vitae malesuada ante elit vitae eros."</p>
-                                                    <span>CEO and Founder</span>
-                                                </div>                                           
-                                            </div>
-                                        </div>
-                                        <div class="item animate" data-animate="fadeInUp">
-                                            <div class="testimonial-item">
-                                                <div class="client-row">
-                                                    <img src="images/profile-01.jpg" class="rounded-circle" alt="profile 3">
-                                                </div>
-                                                <div class="testimonial-content">
-                                                    <h4>Marlar</h4>
-                                                    <p>"Etiam efficitur, tortor facilisis finibus semper, diam magna fringilla lectus, et fringilla felis urna posuere tortor."</p>
-                                                    <span>Chief Marketing Officer</span>
-                                                </div>                                           
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        -->
-            <div class="section animated-row" data-section="slide07">
-                <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-7 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <span>Contact</span>
-                                <h2>Get In Touch!</h2>
-                            </div>
-                            <div class="contact-section">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-6 animate" data-animate="fadeInUp">
-                                        <div class="contact-box">
-                                            <div class="contact-row">
-                                                <i class="fa fa-map-marker"></i> Karachi, Pakistan
-                                            </div>
-                                            <div class="contact-row">
-                                                <i class="fa fa-phone"></i> +92 316 0121324
-                                            </div>
-                                            <div class="contact-row">
-                                                <i class="fa fa-envelope"></i> humayunnaveedkhan@gmail.com
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                // Preload video metadata to ensure duration is available
+                const videos = document.querySelectorAll(selector + ' video');
+                videos.forEach(video => {
+                    video.load(); // Trigger loading to fetch metadata
+                });
 
-        <div id="social-icons">
-            <div class="text-right">
-                <ul class="social-icons">
-                    <!--<li><a href="https://www.facebook.com/humayunnaveedk" title="Facebook"><i class="fa fa-facebook"></i></a></li>-->
-                    <li><a href="https://www.linkedin.com/in/humayunnaveedkhan" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="mailto:humayunnaveedkhan@gmail.com" title="Email"><i class="fa fa-envelope"></i></a></li></ul> 
-                    <!--<li><a href="https://www.instagram.com/humayunnaveedkhan" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-                    -->
-            </div>
-        </div>
-    </div>  
+                return swiperInstance;
+            }
 
-    <script src="js/jquery.js"></script>
+            // Initialize Swiper for each portfolio item
+            initializePortfolioSwiper('.portfolio-swiper-ned-smt');
+            initializePortfolioSwiper('.portfolio-swiper-haptic-teleop');
+            initializePortfolioSwiper('.portfolio-swiper-haptic-ve');
+            initializePortfolioSwiper('.portfolio-swiper-ned-sill');
+            initializePortfolioSwiper('.portfolio-swiper-pull-tester');
+            initializePortfolioSwiper('.portfolio-swiper-mdof-arm');
+            initializePortfolioSwiper('.portfolio-swiper-oxygen-analyzer');
+            initializePortfolioSwiper('.portfolio-swiper-e-iot');
+            initializePortfolioSwiper('.portfolio-swiper-cpap');
+            initializePortfolioSwiper('.portfolio-swiper-metervision');
+            initializePortfolioSwiper('.portfolio-swiper-shake-table');
+            initializePortfolioSwiper('.portfolio-swiper-electric-car');
 
-    <script src="js/bootstrap.min.js"></script>
+            // Refresh Isotope layout after Swiper initialization
+            const iso = new Isotope('.isotope-container', {
+                itemSelector: '.portfolio-item',
+                layoutMode: 'masonry'
+            });
+            imagesLoaded('.isotope-container', function () {
+                iso.layout();
+            });
+        });
+    </script>
 
-    <script src="js/fullpage.min.js"></script>
+</body>
 
-    <script src="js/scrolloverflow.js"></script>
-
-    <script src="js/owl.carousel.min.js"></script>
-
-    <script src="js/jquery.inview.min.js"></script>
-
-    <script src="js/form.js"></script>
-
-    <script src="js/custom.js"></script>
-
-
-  </body>
 </html>
