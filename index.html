@@ -71,29 +71,58 @@
         .portfolio-item video {
             display: block;
         }
+
         /* Hero Section Background */
         #hero {
-            background: url('assets/img/HapticVE.jpeg') no-repeat center center/cover;
+            background: url('assets/img/HapticVE.jpeg') no-repeat center center/contain;
             position: relative;
             min-height: 100vh;
+            border: 8px solid #1a1a1a; /* Dark border */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background-color: #000; /* Fallback background */
+            background-attachment: fixed;
         }
 
-            #hero .container {
-                position: relative;
-                z-index: 2;
-                color: #fff;
-            }
+        #hero .container {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            padding: 20px;
+        }
 
-            #hero::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 1;
-            }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        #hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+        #hero .typed {
+            display: inline-block;
+            min-height: 40px;
+            font-size: 1.5rem;
+            color: #007bff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
         /* Section Spacing */
         section {
             padding: 60px 0;
@@ -117,6 +146,7 @@
             border-top: 1px solid #e0e0e0;
             margin: 40px 0;
         }
+
         /* Contact Section */
         .info-wrap {
             background: #fff;
@@ -128,6 +158,7 @@
         .social-links {
             margin-top: 30px;
         }
+
         /* Isotope Container */
         .isotope-container {
             display: flex;
@@ -186,11 +217,11 @@
                     <div class="col-md-6">
                         <div class="row justify-content-between gy-4">
                             <div class="col-lg-5">
-                                <img src="assets/img/profile-img.jpg" class="img-fluid" alt="Humayun Khan">
+                                <img src="assets/img/profile-img.jpg" class="img-fluid" alt="img">
                             </div>
                             <div class="col-lg-7 about-info">
-                                <p><strong>Name: </strong> <span>Humayun Khan</span></p>
-                                <p><strong>Profile: </strong> <span>Electrical & Computer Systems Engineer, Team Lead at HHRCM Lab, NCRA NEDUET</span></p>
+                                <p><strong>Name: </strong> <span>Humayun </span></p>
+                                <p><strong>Profile: </strong> <span>Electrical & Computer Systems Engineer, Team Lead at HHRCM Lab, NCRA NED</span></p>
                                 <p><strong>Email: </strong> <span>humayunnaveedkhan@gmail.com | humayunkhan@neduet.edu.pk</span></p>
                                 <p><strong>Contact no: </strong> <span>+92 316 0121324</span></p>
                             </div>
@@ -258,7 +289,7 @@
                         <h3 class="resume-title">Summary</h3>
                         <div class="resume-item pb-0">
                             <h4>Humayun Khan</h4>
-                            <p><em>Electrical and Computer Systems Engineer with expertise in haptics, robotics, and industrial IoT, driving end-to-end product design, system integration, and commercialization at HHRCM Lab, NCRA NEDUET.</em></p>
+                            <p><em>Electrical and Computer Systems Engineer with expertise in haptics, robotics, and industrial automation, driving end-to-end product design, system integration, and commercialization at HHRCM Lab, NCRA NEDUET.</em></p>
                             <ul>
                                 <li>HHRCM Lab, NCRA NEDUET, Karachi, Pakistan</li>
                                 <li>+92 316 0121324</li>
@@ -362,7 +393,7 @@
                             <a href="#" class="stretched-link">
                                 <h3>Robotics & Mechatronics</h3>
                             </a>
-                            <p>Developed MDOF industrial robotic arms using AC servo motors, implemented inverse kinematics and utilized precision encoders for feedback.</p>
+                            <p>Developed MDOF robotic arms and gait control for humanoids using ORiN2 SDK and precision feedback.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
@@ -373,7 +404,7 @@
                             <a href="#" class="stretched-link">
                                 <h3>Cloud Computing</h3>
                             </a>
-                            <p>Skilled in AWS, Google Cloud, and multiple APIs integration for data logging, visualization, and real-time dashboards.</p>
+                            <p>Skilled in AWS, Firebase, and Google Sheets API for data logging, visualization, and real-time dashboards.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
@@ -409,7 +440,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter">5</span>
+                            <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter">5</span>
                             <p>Publications</p>
                         </div>
                     </div>
@@ -443,7 +474,7 @@
                             <div class="swiper portfolio-swiper-ned-smt">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide" data-type="image">
-                                        <img src="assets/img/portfolio/NED-SMT.jpg" class="img-fluid" alt="NED-Smart Tape Measure">
+                                        <img src="assets/img/portfolio/ned-smt.jpg" class="img-fluid" alt="NED-Smart Tape Measure">
                                     </div>
                                     <div class="swiper-slide" data-type="video">
                                         <video controls muted playsinline title="NED-Smart Tape Measure Demo">
@@ -454,6 +485,9 @@
                                     <div class="swiper-slide" data-type="image">
                                         <img src="assets/img/portfolio/STM 1.jpg" class="img-fluid" alt="NED-Smart Tape Measure">
                                     </div>
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/IMG-20240910-WA0055.jpg" class="img-fluid" alt="NED-Smart Tape Measure">
+                                    </div>
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
@@ -462,7 +496,7 @@
                             <div class="portfolio-info">
                                 <h4>NED-Smart Tape Measure</h4>
                                 <p>IoT-enabled device for precision measurement, cloud logging, and visualization. Patent filed; deployed commercially.</p>
-                                <a href="assets/img/portfolio/NED-SMT.jpg" title="NED-Smart Tape Measure" data-gallery="portfolio-gallery-iot" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="assets/img/portfolio/ned-smt.jpg" title="NED-Smart Tape Measure" data-gallery="portfolio-gallery-iot" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div>
@@ -523,7 +557,7 @@
                             </div>
                             <div class="portfolio-info">
                                 <h4>Haptic Virtual Environment</h4>
-                                <p>Designed immersive haptics virtual environments using CHAI3D, ForceDimension and OpenHaptics for training, AR/VR, and STEM education.</p>
+                                <p>Designed immersive virtual environments using CHAI3D and OpenHaptics for training, AR/VR, and STEM education.</p>
                                 <a href="assets/img/portfolio/Haptic Virtual Environments.png" title="Haptic Virtual Environment" data-gallery="portfolio-gallery-robotics" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -533,10 +567,13 @@
                             <div class="swiper portfolio-swiper-ned-sill">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide" data-type="image">
-                                        <img src="assets/img/portfolio/ned-sill-02.png" class="img-fluid" alt="Smart Industrial Liquid Level">
+                                        <img src="assets/img/portfolio/NED-SILL-02.png" class="img-fluid" alt="Smart Industrial Liquid Level">
                                     </div>
                                     <div class="swiper-slide" data-type="image">
-                                        <img src="assets/img/portfolio/ned-sill-01.png" class="img-fluid" alt="Smart Industrial Liquid Level">
+                                        <img src="assets/img/portfolio/NED-SILL-01.png" class="img-fluid" alt="Smart Industrial Liquid Level">
+                                    </div>
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/NED-SILL at JP Coats.jpg" class="img-fluid" alt="Smart Industrial Liquid Level">
                                     </div>
                                     <div class="swiper-slide" data-type="image">
                                         <img src="assets/img/portfolio/luckytex.jpg" class="img-fluid" alt="Smart Industrial Liquid Level">
@@ -580,7 +617,7 @@
                             <div class="swiper portfolio-swiper-mdof-arm">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide" data-type="image">
-                                        <img src="assets/img/portfolio/mdof ra.jpg" class="img-fluid" alt="MDOF Robotic Arm">
+                                        <img src="assets/img/portfolio/MDOF RA.jpg" class="img-fluid" alt="MDOF Robotic Arm">
                                     </div>
                                     <div class="swiper-slide" data-type="video">
                                         <video controls muted playsinline title="MDOF Robotic Arm Demo">
@@ -598,7 +635,7 @@
                             </div>
                             <div class="portfolio-info">
                                 <h4>MDOF Robotic Arm</h4>
-                                <p>Multi-DOF arm for automation and haptic research. Funded by NRPU (PKR 8.8M); pilot tested.</p>
+                                <p>Multi-DOF arm for automation and haptic research. Funded by NRPU (PKR 8.8M); patent filed; pilot tested.</p>
                                 <a href="assets/img/portfolio/NED Industrial Robotic Arm 1080p LScape.mkv" title="MDOF Robotic Arm" data-gallery="portfolio-gallery-robotics" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -632,8 +669,6 @@
                                     <div class="swiper-slide" data-type="image">
                                         <img src="assets/img/portfolio/eiot-1.jpg" class="img-fluid" alt="E-IoT Energy Monitoring">
                                     </div>
-                                </div>
-                                <div class="swiper-wrapper">
                                     <div class="swiper-slide" data-type="image">
                                         <img src="assets/img/portfolio/eiot-2.jpg" class="img-fluid" alt="E-IoT Energy Monitoring">
                                     </div>
@@ -644,7 +679,7 @@
                             </div>
                             <div class="portfolio-info">
                                 <h4>E-IoT Energy Monitoring</h4>
-                                <p>IoT solution for energy and health tracking with cloud dashboards. Patent filed; testbed ready.</p>
+                                <p>IoT solution for energy and health tracking with cloud dashboards. Being tested in Multiple industrial units.</p>
                                 <a href="assets/img/portfolio/eiot-2.jpg" title="E-IoT Energy Monitoring" data-gallery="portfolio-gallery-iot" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -664,7 +699,7 @@
                             <div class="portfolio-info">
                                 <h4>CPAP Device</h4>
                                 <p>Smart respiratory support with IoT connectivity. Patent filed; funded by SRSP (PKR 2.4M).</p>
-                                <a href="assets/img/portfolio/cpap.png" title="CPAP Device" data-gallery="portfolio-gallery-medical" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="assets/img/portfolio/Cpap.png" title="CPAP Device" data-gallery="portfolio-gallery-medical" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div>
@@ -675,8 +710,6 @@
                                     <div class="swiper-slide" data-type="image">
                                         <img src="assets/img/portfolio/metervision-1.jpg" class="img-fluid" alt="MeterVision">
                                     </div>
-                                </div>
-                                <div class="swiper-wrapper">
                                     <div class="swiper-slide" data-type="image">
                                         <img src="assets/img/portfolio/metervision-2.jpg" class="img-fluid" alt="MeterVision">
                                     </div>
@@ -721,7 +754,7 @@
                             </div>
                             <div class="portfolio-info">
                                 <h4>Shake Table</h4>
-                                <p>Indigenous design for structural simulation. Demonstrated to UNDP, CM Balochistan and provincial leadership.</p>
+                                <p>Indigenous design for structural simulation. Patent filed; demonstrated for UNDP and CM Balochistan.</p>
                                 <a href="assets/img/portfolio/NED - Shake Table.jpg" title="Shake Table" data-gallery="portfolio-gallery-robotics" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
@@ -774,7 +807,7 @@
                             <div class="info-item d-flex align-items-center">
                                 <i class="bi bi-telephone flex-shrink-0"></i>
                                 <div>
-                                    <h3>Contact #</h3>
+                                    <h3>Call Me</h3>
                                     <p>+92 316 0121324</p>
                                 </div>
                             </div>
@@ -856,13 +889,13 @@
                     "Robotics Consultant",
                     "International Teleoperator"
                 ],
-                typeSpeed: 100,
-                backSpeed: 50,
-                backDelay: 2000,
-                //loopDelay: 2500,
+                typeSpeed: 80,
+                backSpeed: 40,
+                backDelay: 1500,
+                startDelay: 500,
                 smartBackspace: true,
-                //loop: true,
-                //loopCount: Infinity
+                loop: true,
+                loopCount: Infinity
             });
 
             // Portfolio Carousels: Dynamic Video Duration
