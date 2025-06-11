@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!-- Head Section with Updated CSS -->
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -27,29 +25,48 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
-    <!-- Custom CSS for Portfolio and Hero -->
+    <!-- Custom CSS -->
     <style>
+        /* Portfolio Swiper */
         .portfolio-item .swiper {
             width: 100%;
             height: 300px;
             overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+            background: #1a1a1a; /* Dark background to support border */
+            padding: 6px; /* Space for inner border effect */
         }
 
-        .portfolio-item .swiper-slide img,
-        .portfolio-item .swiper-slide video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .portfolio-item .swiper-slide {
+            border: 2px solid #1a1a1a; /* Dark rectangle border */
+            border-radius: 4px; /* Slightly rounded for polish */
+            overflow: hidden; /* Ensure content respects border radius */
+            background: #000; /* Black background for slides to enhance contrast */
         }
+
+            .portfolio-item .swiper-slide img,
+            .portfolio-item .swiper-slide video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
 
         .portfolio-item .swiper-button-next,
         .portfolio-item .swiper-button-prev {
             color: #fff;
-            background: rgba(0, 0, 0, 0.5);
-            width: 30px;
-            height: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
+            transition: background 0.3s;
         }
+
+            .portfolio-item .swiper-button-next:hover,
+            .portfolio-item .swiper-button-prev:hover {
+                background: rgba(0, 123, 255, 0.8);
+            }
 
             .portfolio-item .swiper-button-next:after,
             .portfolio-item .swiper-button-prev:after {
@@ -62,102 +79,164 @@
 
         .portfolio-item .swiper-pagination-bullet {
             background: #fff;
+            opacity: 0.7;
         }
 
         .portfolio-item .swiper-pagination-bullet-active {
             background: #007bff;
+            opacity: 1;
         }
 
         .portfolio-item video {
             display: block;
         }
 
-        /* Hero Section Background */
+        /* Hero Section */
         #hero {
-            background: url('assets/img/HapticVE.jpeg') no-repeat center center/contain;
             position: relative;
             min-height: 100vh;
-            border: 8px solid #1a1a1a; /* Dark border */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            background-color: #000; /* Fallback background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('assets/img/HapticVE.jpeg') no-repeat center center/cover;
             background-attachment: fixed;
+            border: 6px solid #1a1a1a;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
 
-        #hero .container {
-            position: relative;
-            z-index: 2;
-            color: #fff;
-            padding: 20px;
+            #hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+                z-index: 1;
+            }
+
+            #hero .container {
+                position: relative;
+                z-index: 2;
+                text-align: center;
+                padding: 30px 15px;
+                max-width: 900px;
+            }
+
+            #hero h2 {
+                color: #ffffff;
+                font-size: 3.5rem;
+                font-weight: 800;
+                font-family: 'Poppins', sans-serif;
+                margin-bottom: 20px;
+                letter-spacing: 1px;
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+                animation: fadeInDown 1s ease;
+            }
+
+            #hero p {
+                color: #e0e0e0;
+                font-size: 1.25rem;
+                line-height: 1.8;
+                margin-bottom: 30px;
+                font-family: 'Roboto', sans-serif;
+                max-width: 700px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #hero .typed {
+                color: #00b7ff;
+                font-size: 1.75rem;
+                font-weight: 500;
+                font-family: 'Raleway', sans-serif;
+                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+                min-height: 44px;
+                display: inline-block;
+            }
+
+            #hero .btn-get-started {
+                display: inline-block;
+                padding: 12px 30px;
+                background: #007bff;
+                color: #fff;
+                border-radius: 50px;
+                font-size: 1rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+            }
+
+                #hero .btn-get-started:hover {
+                    background: #0056b3;
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+                }
+
+        /* Header Styling */
+        #header {
+            background: rgba(0, 0, 0, 0.9);
+            transition: all 0.3s;
         }
 
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
+            #header .logo h1 {
+                color: #fff;
+                font-size: 1.8rem;
+                font-weight: 700;
+            }
 
-        #hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+            #header .navmenu a {
+                color: #e0e0e0;
+                font-size: 1rem;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
 
-        #hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            max-width: 800px;
-        }
-
-        #hero .typed {
-            display: inline-block;
-            min-height: 40px;
-            font-size: 1.5rem;
-            color: #007bff;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-        }
+                #header .navmenu a:hover,
+                #header .navmenu a.active {
+                    color: #00b7ff;
+                }
 
         /* Section Spacing */
         section {
-            padding: 60px 0;
-            position: relative;
+            padding: 80px 0;
         }
 
         #portfolio {
-            background: #f8f9fa;
-            overflow: hidden;
-            min-height: auto;
-            margin-bottom: 40px;
+            background: #f5f7fa;
+            margin-bottom: 50px;
         }
 
         #contact {
-            background: #fff;
-            clear: both;
-            padding-top: 80px;
+            background: #ffffff;
+            padding-top: 100px;
         }
 
         .section-divider {
             border-top: 1px solid #e0e0e0;
-            margin: 40px 0;
+            margin: 50px 0;
         }
 
         /* Contact Section */
         .info-wrap {
             background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .social-links {
-            margin-top: 30px;
+        .social-links a {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s;
         }
+
+            .social-links a:hover {
+                color: #007bff;
+            }
 
         /* Isotope Container */
         .isotope-container {
@@ -167,7 +246,57 @@
         }
 
         .portfolio-item {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            #hero h2 {
+                font-size: 2.5rem;
+            }
+
+            #hero .typed {
+                font-size: 1.3rem;
+            }
+
+            #hero p {
+                font-size: 1.1rem;
+            }
+
+            #hero {
+                background-attachment: scroll;
+            }
+        }
+
+        @media (max-width: 576px) {
+            #hero h2 {
+                font-size: 2rem;
+            }
+
+            #hero .typed {
+                font-size: 1.1rem;
+            }
+
+            .portfolio-item .swiper {
+                height: 200px;
+            }
+
+            .portfolio-item .swiper-slide {
+                border: 1px solid #1a1a1a; /* Thinner border for smaller screens */
+            }
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -207,7 +336,11 @@
         <section id="hero" class="hero section dark-background">
             <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
                 <h2>Humayun Khan</h2>
-                <p><span class="typed" data-typed-items="R&D Engineer, Team Lead NCRA-NEDUET, Founder & CTO – RobAutoStem & Haptronica, Industrial Automation Architect, Embedded Systems Innovator, IIoT & Haptics Expert, Robotics Consultant, International Teleoperator"></span></p>
+                <p>Innovating the Future of Haptics, Robotics, and Industrial IoT</p>
+                <div class="typed-wrapper">
+                    <span class="typed" data-typed-items="R&D Engineer, Team Lead NCRA-NEDUET, Founder & CTO – RobAutoStem & Haptronica, Industrial Automation Architect, Embedded Systems Innovator, IIoT & Haptics Expert, Robotics Consultant, International Teleoperator"></span>
+                </div>
+                <a href="#portfolio" class="btn-get-started">Explore My Work</a>
             </div>
         </section><!-- /Hero Section -->
         <!-- About Section -->
@@ -360,7 +493,7 @@
                             <a href="#" class="stretched-link">
                                 <h3>Haptics & Teleoperation</h3>
                             </a>
-                            <p>Expert in CHAI3D, OpenHaptics, and bilateral control for haptic virtual environments and teleoperation systems.</p>
+                            <p>Expert in CHAI3D, OpenHaptics, bilateral teleoperation and control for haptic virtual environments and tele-robotic systems.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
@@ -382,7 +515,7 @@
                             <a href="#" class="stretched-link">
                                 <h3>Industrial IoT</h3>
                             </a>
-                            <p>Designed SCADA, PLC, and cloud-integrated solutions using MQTT, AWS, and EtherCAT for real-time monitoring.</p>
+                            <p>Designed IIoT, and cloud-integrated solutions using BLE, Wi-Fi, MQTT, RS-232, Modbus and EtherCAT for real-time monitoring integrable with SCADA, RTUs, and DCS.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
@@ -393,7 +526,7 @@
                             <a href="#" class="stretched-link">
                                 <h3>Robotics & Mechatronics</h3>
                             </a>
-                            <p>Developed MDOF industrial robotic arms using 3Phase AC servo motors, implementing inverse kinematics and precision encoders for feedback. Moreover, using ORiN2 SDK and WincapsIII for repetitive automation tasks</p>
+                            <p>Developed MDOF industrial robotic arms using 3 phase AC servo motors, implementing inverse kinematics and precision encoders for feedback. Moreover, using ORiN2 SDK and WincapsIII for repetitive automation tasks</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
@@ -404,7 +537,7 @@
                             <a href="#" class="stretched-link">
                                 <h3>Cloud Computing</h3>
                             </a>
-                            <p>Skilled in AWS, Firebase, and Google Sheets API for data logging, visualization, and real-time dashboards.</p>
+                            <p>Skilled in AWS, Google Cloud, multiple API integration for data logging, visualization, and real-time dashboards.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
@@ -415,7 +548,7 @@
                             <a href="#" class="stretched-link">
                                 <h3>Cybersecurity</h3>
                             </a>
-                            <p>Experienced in SIEM, MITRE ATT&CK, and Wireshark for network defense and anomaly detection.</p>
+                            <p>Experienced in SIEM, MITRE ATT&CK, Wireshark for network defense and anomaly detection and developing packet level control for haptic teleoperation and tele-robotics.</p>
                         </div>
                     </div>
                 </div>
@@ -679,7 +812,7 @@
                             </div>
                             <div class="portfolio-info">
                                 <h4>E-IoT Energy Monitoring</h4>
-                                <p>IoT solution for energy and health tracking with cloud dashboards. Being tested in Multiple industrial units.</p>
+                                <p>IoT solution for energy and health tracking with cloud dashboards. Being tested in multiple industrial units.</p>
                                 <a href="assets/img/portfolio/eiot-2.jpg" title="E-IoT Energy Monitoring" data-gallery="portfolio-gallery-iot" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
