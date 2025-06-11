@@ -1,4 +1,5 @@
-<!-- Head Section with Updated CSS -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -28,68 +29,111 @@
     <!-- Custom CSS -->
     <style>
         /* Portfolio Swiper */
-        .portfolio-item .swiper {
-            width: 100%;
-            height: 300px;
-            overflow: hidden;
+        .portfolio-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-radius: 8px;
-            position: relative;
-            background: #1a1a1a; /* Dark background to support border */
-            padding: 6px; /* Space for inner border effect */
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            background: #fff; /* Clean white background */
         }
 
-        .portfolio-item .swiper-slide {
-            border: 2px solid #1a1a1a; /* Dark rectangle border */
-            border-radius: 4px; /* Slightly rounded for polish */
-            overflow: hidden; /* Ensure content respects border radius */
-            background: #000; /* Black background for slides to enhance contrast */
-        }
+            .portfolio-item:hover {
+                transform: translateY(-5px); /* Lift effect on hover */
+                box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+            }
 
-            .portfolio-item .swiper-slide img,
-            .portfolio-item .swiper-slide video {
+            .portfolio-item .swiper {
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
+                height: 300px;
+                overflow: hidden;
+                border-radius: 8px 8px 0 0; /* Rounded top corners */
+            }
+
+            .portfolio-item .swiper-slide {
+                /* Removed black border */
+                background: #000; /* Black background for media contrast */
+            }
+
+                .portfolio-item .swiper-slide img,
+                .portfolio-item .swiper-slide video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
+
+            .portfolio-item .swiper-button-next,
+            .portfolio-item .swiper-button-prev {
+                color: #fff;
+                background: rgba(0, 0, 0, 0.5);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                transition: background 0.3s;
+                opacity: 0.7;
+            }
+
+                .portfolio-item .swiper-button-next:hover,
+                .portfolio-item .swiper-button-prev:hover {
+                    background: #007bff;
+                    opacity: 1;
+                }
+
+                .portfolio-item .swiper-button-next:after,
+                .portfolio-item .swiper-button-prev:after {
+                    font-size: 14px;
+                }
+
+            .portfolio-item .swiper-pagination {
+                bottom: 8px;
+            }
+
+            .portfolio-item .swiper-pagination-bullet {
+                background: #fff;
+                opacity: 0.6;
+            }
+
+            .portfolio-item .swiper-pagination-bullet-active {
+                background: #007bff;
+                opacity: 1;
+            }
+
+            .portfolio-item video {
                 display: block;
             }
 
-        .portfolio-item .swiper-button-next,
-        .portfolio-item .swiper-button-prev {
-            color: #fff;
-            background: rgba(0, 0, 0, 0.6);
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            transition: background 0.3s;
-        }
-
-            .portfolio-item .swiper-button-next:hover,
-            .portfolio-item .swiper-button-prev:hover {
-                background: rgba(0, 123, 255, 0.8);
-            }
-
-            .portfolio-item .swiper-button-next:after,
-            .portfolio-item .swiper-button-prev:after {
-                font-size: 16px;
-            }
-
-        .portfolio-item .swiper-pagination {
-            bottom: 10px;
-        }
-
-        .portfolio-item .swiper-pagination-bullet {
+        .portfolio-info {
+            padding: 20px;
             background: #fff;
-            opacity: 0.7;
+            text-align: left;
         }
 
-        .portfolio-item .swiper-pagination-bullet-active {
-            background: #007bff;
-            opacity: 1;
-        }
+            .portfolio-info h4 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #333;
+                margin-bottom: 10px;
+            }
 
-        .portfolio-item video {
-            display: block;
-        }
+            .portfolio-info p {
+                font-family: 'Roboto', sans-serif;
+                font-size: 1rem;
+                color: #666;
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+
+            .portfolio-info a {
+                font-size: 1.2rem;
+                color: #007bff;
+                margin-right: 15px;
+                transition: color 0.3s;
+            }
+
+                .portfolio-info a:hover {
+                    color: #0056b3;
+                }
 
         /* Hero Section */
         #hero {
@@ -100,7 +144,6 @@
             justify-content: center;
             background: url('assets/img/Haptic VE.jpg') no-repeat center center/cover;
             background-attachment: fixed;
-            border: 6px solid #1a1a1a;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
             overflow: hidden;
         }
@@ -164,6 +207,7 @@
                 border-radius: 50px;
                 font-size: 1rem;
                 font-weight: 600;
+                font-family: 'Poppins', sans-serif;
                 text-transform: uppercase;
                 transition: all 0.3s ease;
                 box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
@@ -185,12 +229,14 @@
                 color: #fff;
                 font-size: 1.8rem;
                 font-weight: 700;
+                font-family: 'Poppins', sans-serif;
             }
 
             #header .navmenu a {
                 color: #e0e0e0;
                 font-size: 1rem;
                 font-weight: 500;
+                font-family: 'Roboto', sans-serif;
                 transition: color 0.3s;
             }
 
@@ -245,10 +291,6 @@
             justify-content: space-between;
         }
 
-        .portfolio-item {
-            margin-bottom: 40px;
-        }
-
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             #hero h2 {
@@ -266,6 +308,18 @@
             #hero {
                 background-attachment: scroll;
             }
+
+            .portfolio-item .swiper {
+                height: 250px;
+            }
+
+            .portfolio-info h4 {
+                font-size: 1.3rem;
+            }
+
+            .portfolio-info p {
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -281,8 +335,12 @@
                 height: 200px;
             }
 
-            .portfolio-item .swiper-slide {
-                border: 1px solid #1a1a1a; /* Thinner border for smaller screens */
+            .portfolio-info h4 {
+                font-size: 1.2rem;
+            }
+
+            .portfolio-info p {
+                font-size: 0.85rem;
             }
         }
 
@@ -300,15 +358,12 @@
         }
     </style>
 </head>
-
 <body class="index-page">
-
     <header id="header" class="header d-flex align-items-center sticky-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
                 <h1 class="sitename">Humayun Khan</h1>
             </a>
-
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="#hero" class="active">Home</a></li>
@@ -329,9 +384,7 @@
             </nav>
         </div>
     </header>
-
     <main class="main">
-
         <!-- Hero Section -->
         <section id="hero" class="hero section dark-background">
             <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
@@ -342,7 +395,7 @@
                 </div>
                 <a href="#portfolio" class="btn-get-started">Explore My Work</a>
             </div>
-        </section><!-- /Hero Section -->
+        </section>
         <!-- About Section -->
         <section id="about" class="about section">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -409,7 +462,7 @@
                     </div>
                 </div>
             </div>
-        </section><!-- /About Section -->
+        </section>
         <!-- Resume Section -->
         <section id="resume" class="resume section">
             <div class="container section-title" data-aos="fade-up">
@@ -476,7 +529,7 @@
                     </div>
                 </div>
             </div>
-        </section><!-- /Resume Section -->
+        </section>
         <!-- Services Section -->
         <section id="services" class="services section">
             <div class="container section-title" data-aos="fade-up">
@@ -553,7 +606,7 @@
                     </div>
                 </div>
             </div>
-        </section><!-- /Services Section -->
+        </section>
         <!-- Stats Section -->
         <section id="stats" class="stats section accent-background">
             <img src="assets/img/portfolio/stats-bg.jpg" alt="" data-aos="fade-in">
@@ -567,25 +620,25 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1" class="purecounter">14</span>
+                            <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1" class="purecounter">14</span>
                             <p>Products Developed</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter">12</span>
+                            <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter">12</span>
                             <p>Publications</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter">4</span>
+                            <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter">4</span>
                             <p>Awards Won</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section><!-- /Stats Section -->
+        </section>
         <!-- Portfolio Section -->
         <section id="portfolio" class="portfolio section">
             <div class="container section-title" data-aos="fade-up">
@@ -863,7 +916,7 @@
                             <div class="swiper portfolio-swiper-shake-table">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide" data-type="image">
-                                        <img src="assets/img/portfolio/Shake table-Humayun-Dr. Sarosh Lodi.jpg" class="img-fluid" alt="Shake Table">
+                                        <img src="assets/img/portfolio/Shake table-Humayun-Dr. Sarosh Lodi.jpg" alt="Shake Table">
                                     </div>
                                     <div class="swiper-slide" data-type="image">
                                         <img src="assets/img/portfolio/shaketable4.jpg" class="img-fluid" alt="Shake Table">
@@ -874,11 +927,8 @@
                                             Your browser does not support the video tag.
                                         </video>
                                     </div>
-                                    <div class="swiper-slide" data-type="video">
-                                        <video controls muted playsinline title="Shake Table Demo">
-                                            <source src="assets/img/portfolio/Shaketable-dem.jpg" class="img-fluid" alt="Shake Table">
-                                            Your browser does not support the video tag.
-                                        </video>
+                                    <div class="swiper-slide" data-type="image">
+                                        <img src="assets/img/portfolio/Shaketable-dem.jpg" class="img-fluid" alt="Shake Table">
                                     </div>
                                 </div>
                                 <div class="swiper-button-next"></div>
@@ -888,7 +938,7 @@
                             <div class="portfolio-info">
                                 <h4>Shake Table</h4>
                                 <p>Indigenous design for structural simulation and strength testing. Demonstrated to UNDP dignitaries, CM Balochistan and provincial leadership.</p>
-                                <a href="assets/img/portfolio/Shake table-Humayun-Dr. Sarosh Lodi.jpg" title="Shake Table" data-gallery="portfolio-gallery-robotics" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="assets/img/portfolio/Shake table-Humayun-Dr.jpg" title="Shake Table" data-gallery="portfolio-gallery-robotics" class="glightbox preview-link"></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div>
@@ -907,17 +957,16 @@
                             <div class="portfolio-info">
                                 <h4>Formula Electric Car NED EEN</h4>
                                 <p>Led electrical design for power distribution, achieving 4th place globally in Formula SAE-A 2020 AustralAsia.</p>
-                                <a href="assets/img/portfolio/Formula Electric Car NED EEN.jpg" title="Formula Electric Car NED EEN" data-gallery="portfolio-gallery-industrial" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="assets/img/portfolio/Formula Electric Car NED EEN.jpg" title="Formula Electric Car NED EEN" data-gallery="portfolio-gallery-industrial" class="glightbox preview-link"></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section><!-- /Portfolio Section -->
+        </section>
         <!-- Section Divider -->
         <div class="section-divider"></div>
-
         <!-- Contact Section -->
         <section id="contact" class="contact section">
             <div class="container section-title" data-aos="fade-up">
@@ -941,7 +990,7 @@
                                 <i class="bi bi-telephone flex-shrink-0"></i>
                                 <div>
                                     <h3>Contact #</h3>
-                                    <p>+92 316 0121324</p>
+                                    <p>+92 316 2024</p>
                                 </div>
                             </div>
                         </div>
@@ -960,16 +1009,14 @@
                     <div class="col-lg-6">
                         <div class="social-links d-flex justify-content-center mt-4">
                             <a href="https://www.linkedin.com/in/humayunnaveedkhan" target="_blank"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://www.facebook.com/NCRANEDUET" target="_blank"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.facebook.com/NCRANEDUET" target="_blank"><i class="bi bi-star"></i></a>
                             <a href="https://humayunnaveedkhan.github.io/portfolio" target="_blank"><i class="bi bi-github"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section><!-- /Contact Section -->
-
+        </section>
     </main>
-
     <footer id="footer" class="footer accent-background">
         <div class="container">
             <div class="copyright text-center">
@@ -978,20 +1025,17 @@
             <div class="social-links d-flex justify-content-center">
                 <a href="https://www.linkedin.com/in/humayunnaveedkhan" target="_blank"><i class="bi bi-linkedin"></i></a>
                 <a href="https://www.facebook.com/NCRANEDUET" target="_blank"><i class="bi bi-facebook"></i></a>
-                <a href="https://humayunnaveedkhan.github.io/portfolio" target="_blank"><i class="bi bi-github"></i></a>
+                <a href=" https://humayunnaveedkhan.github.io/portfolio" target="_blank"><i class="bi bi-github"></i></a>
             </div>
             <div class="credits">
                 Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
             </div>
         </div>
     </footer>
-
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
     <!-- Preloader -->
     <div id="preloader"></div>
-
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -1003,10 +1047,8 @@
     <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
-
     <!-- Custom JS for Portfolio Carousels -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -1022,7 +1064,7 @@
                     "Robotics Consultant",
                     "International Teleoperator"
                 ],
-                typeSpeed: 100,
+                typeSpeed: 90,
                 backSpeed: 50,
                 backDelay: 2000,
                 startDelay: 500,
@@ -1034,7 +1076,7 @@
             // Portfolio Carousels: Dynamic Video Duration
             function initializePortfolioSwiper(selector) {
                 const defaultImageDelay = 5000; // 5 seconds for images
-                const slides = document.querySelectorAll(selector + ' .swiper-slide');
+                const slides = document.querySelectorAll(selector + '.swiper-slide');
                 const hasMultipleSlides = slides.length > 1;
 
                 let swiperInstance = new Swiper(selector, {
@@ -1083,7 +1125,7 @@
                             if (slideType === 'video') {
                                 const activeVideo = activeSlide.querySelector('video');
                                 activeVideo.play().catch(error => console.log('Video play error:', error));
-                                // Use video duration or fallback to 10 seconds if duration is not available
+                                // Use video duration or fallback to 10 seconds
                                 delay = (activeVideo.duration || 10) * 1000;
                             } else {
                                 delay = defaultImageDelay;
@@ -1097,7 +1139,7 @@
                     }
                 });
 
-                // Preload video metadata to ensure duration is available
+                // Preload video metadata
                 const videos = document.querySelectorAll(selector + ' video');
                 videos.forEach(video => {
                     video.load(); // Trigger loading to fetch metadata
@@ -1130,7 +1172,5 @@
             });
         });
     </script>
-
 </body>
-
 </html>
