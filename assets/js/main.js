@@ -110,11 +110,22 @@
     let typed_strings = selectTyped.getAttribute('data-typed-items');
     typed_strings = typed_strings.split(',');
     new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
+        strings: ["R&D Engineer",
+            "Team Lead NCRA-NEDUET",
+            "Founder & CTO | RobAutoStem & Haptronica",
+            "Industrial Automation Architect",
+            "Embedded Systems Innovator",
+            "IIoT & Haptics Expert",
+            "Robotics Consultant",
+            "International Teleoperator"],
+            typeSpeed: 100,   
+            backSpeed: 50,
+            backDelay: 2000,
+            startDelay: 500,
+            smartBackspace: true,
+            loop: true,
+            loopCount: Infinity
+
     });
   }
 
