@@ -16,50 +16,104 @@
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" defer>
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" defer>
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" defer>
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
-        /* Network Table */
-        .network-table {
+        /* Network Grid */
+        .network-grid {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            border-collapse: collapse;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
         }
 
-            .network-table th, .network-table td {
-                padding: 15px;
-                text-align: center;
-                vertical-align: middle;
-                font-family: 'Roboto', sans-serif;
-                font-size: 0.9rem;
-                color: #333;
-                border: 1px solid #e9ecef;
+        .network-item {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+            .network-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
             }
 
-            .network-table th {
-                background: #f1f3f5;
-                font-family: 'Poppins', sans-serif;
-                font-weight: 600;
-                font-size: 1rem;
-                color: #333;
+            .network-item .swiper {
+                width: 100%;
+                height: 300px;
+                overflow: hidden;
+                border-radius: 8px 8px 0 0;
             }
 
-            .network-table td {
+            .network-item .swiper-slide {
+                position: relative;
+                background: #000;
+            }
+
+                .network-item .swiper-slide img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                    opacity: 0.8;
+                    transition: opacity 0.3s;
+                }
+
+                .network-item .swiper-slide:hover img {
+                    opacity: 1;
+                }
+
+            .network-item .swiper-button-next,
+            .network-item .swiper-button-prev {
+                color: #fff;
+                background: rgba(0, 0, 0, 0.5);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                transition: background 0.3s;
+                opacity: 0.7;
+            }
+
+                .network-item .swiper-button-next:hover,
+                .network-item .swiper-button-prev:hover {
+                    background: #007bff;
+                    opacity: 1;
+                }
+
+                .network-item .swiper-button-next:after,
+                .network-item .swiper-button-prev:after {
+                    font-size: 14px;
+                }
+
+            .network-item .swiper-pagination {
+                bottom: 8px;
+            }
+
+            .network-item .swiper-pagination-bullet {
                 background: #fff;
+                opacity: 0.6;
             }
 
-            .network-table tr:hover td {
-                background: #f8f9fa;
+            .network-item .swiper-pagination-bullet-active {
+                background: #007bff;
+                opacity: 1;
             }
+
+            .network-item h3 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #333;
+                text-align: center;
+                padding: 10px 0;
+                margin: 0;
+            }
+
         /* Hero Section */
         #hero {
             position: relative;
@@ -117,10 +171,60 @@
                     transform: translateY(-2px);
                     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
                 }
+
         /* Section Background */
         .network, .contact {
             background: #f8f9fa;
         }
+
+        /* Footer */
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+        }
+
+            .footer .date-time {
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+
+            .footer .copyright {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+
+            .footer .social-links {
+                margin-bottom: 10px;
+            }
+
+                .footer .social-links a {
+                    color: #333;
+                    font-size: 1.2rem;
+                    margin: 0 10px;
+                    transition: color 0.3s;
+                }
+
+                    .footer .social-links a:hover {
+                        color: #007bff;
+                    }
+
+            .footer .credits {
+                font-size: 0.8rem;
+                color: #666;
+            }
+
+                .footer .credits a {
+                    color: #007bff;
+                    text-decoration: none;
+                }
+
+                    .footer .credits a:hover {
+                        text-decoration: underline;
+                    }
+
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             #hero h2 {
@@ -131,9 +235,20 @@
                 font-size: 1.1rem;
             }
 
-            .network-table th, .network-table td {
+            .network-item .swiper {
+                height: 250px;
+            }
+
+            .network-item h3 {
+                font-size: 1.3rem;
+            }
+
+            .footer .date-time {
+                font-size: 0.9rem;
+            }
+
+            .footer .copyright {
                 font-size: 0.8rem;
-                padding: 10px;
             }
         }
 
@@ -146,16 +261,23 @@
                 font-size: 1rem;
             }
 
-            .network-table {
-                display: block;
-                overflow-x: auto;
+            .network-item .swiper {
+                height: 200px;
             }
 
-                .network-table th, .network-table td {
-                    font-size: 0.7rem;
-                    padding: 8px;
-                }
+            .network-item h3 {
+                font-size: 1.1rem;
+            }
+
+            .footer .date-time {
+                font-size: 0.8rem;
+            }
+
+            .footer .copyright {
+                font-size: 0.7rem;
+            }
         }
+
         /* Animation Keyframes */
         @keyframes fadeInDown {
             from {
@@ -212,48 +334,292 @@
                 <h2>My Network</h2>
                 <p>Key collaborators, clients, and professional engagements</p>
             </div>
-            <div class="container" data-aos="fade-up" data-aos-delay="200">
-                <table class="network-table">
-                    <thead>
-                        <tr>
-                            <th>Collaborator 1</th>
-                            <th>Collaborator 2</th>
-                            <th>Collaborator 3</th>
-                            <th>Collaborator 4</th>
-                            <th>Collaborator 5</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Cell 1</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                            <td>Cell 4</td>
-                            <td>Cell 5</td>
-                        </tr>
-                        <tr>
-                            <td>Cell 6</td>
-                            <td>Cell 7</td>
-                            <td>Cell 8</td>
-                            <td>Cell 9</td>
-                            <td>Cell 10</td>
-                        </tr>
-                        <tr>
-                            <td>Cell 11</td>
-                            <td>Cell 12</td>
-                            <td>Cell 13</td>
-                            <td>Cell 14</td>
-                            <td>Cell 15</td>
-                        </tr>
-                        <tr>
-                            <td>Cell 16</td>
-                            <td>Cell 17</td>
-                            <td>Cell 18</td>
-                            <td>Cell 19</td>
-                            <td>Cell 20</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="container network-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="row gy-4 isotope-container">
+                    <!-- Row 1 -->
+                    <!-- FPCCI Events -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper fpcci-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Fpcci-7.webp" alt="SS_Fpcci-stall-1" loading="lazy">
+                                </div><div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Fpcci-6.jpg" alt="SS_Fpcci-stall-1" loading="lazy">
+                                </div><div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Fpcci-stall-1.jpg" alt="SS_Fpcci-stall-1" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Fpcci-3.jpg" alt="SS_Fpcci-3" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Fpcci-1.jpg" alt="SS_Fpcci-1" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Fpcci-2.jpg" alt="SS_Fpcci-2" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Fpcci-4.jpg" alt="SS_Fpcci-4" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Fpcci-5.jpg" alt="SS_Fpcci-5" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Fpcci-Ammar.jpg" alt="SS_Fpcci-Ammar" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Fpcci-Ammar-Muz.jpg" alt="SS_Fpcci-Ammar-Muz" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Fpcci-prejud-1.jpg" alt="SS_Fpcci-prejud-1" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Fpcci-prejud-2.jpg" alt="SS_Fpcci-prejud-2" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>1st Sindh Innovative Startups Showcase by Sindh HEC and FPCCI - May 2025</p>
+                    </div>
+                    <!-- SHEC Events -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper shec-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/SHEC-24-2.jpg" alt="SS_SHEC-24-2" loading="lazy">
+                                </div><div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/SHEC-24-1.jpg" alt="SS_SHEC-24-3" loading="lazy">
+                                </div><div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/SHEC-24-4.webp" alt="SS_SHEC-24-4" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/SHEC-24-3.webp" alt="SS_SHEC-24-3" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>3rd Sindh Research and Technology Showcase by Sindh Higher Education Commission - June 2024</p>
+                    </div>
+                    <!-- NIC Events (May 25) -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper nic-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/NIC-InvPit-May25-0.jpg" alt="SS_NIC-Umair-InvPit-May25-1" loading="lazy">
+                                </div><div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/NIC-InvPit-May25-2.webp" alt="SS_NIC-Umair-InvPit-May25-1" loading="lazy">
+                                </div><div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/NIC-Umair-InvPit-May25-1.jpg" alt="SS_NIC-Umair-InvPit-May25-1" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/NIC-InvPit-May25-1.jpg" alt="SS_NIC-InvPit-May25-1" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>RobAutoStem Investor Pitch May 2025</p>
+                    </div>
+                    <!-- SHEC Events -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper shec-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/SHEC-23.jpg" alt="SS_SHEC-23" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>2nd Sindh Research and Technology Showcase by Sindh Higher Education Commission - May 2023</p>
+                    </div>
+                    <!-- Row 2 -->
+                    <!-- NEDEAN Conv 25 -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper nedean-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/NEDEANConv25-3.jpg" alt="SS_NEDEANConv25-3" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/NEDEANConv25-2.jpg" alt="SS_NEDEANConv25-2" loading="lazy">
+                                </div><div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/NEDEANConv25-1.jpg" alt="SS_NEDEANConv25-1" loading="lazy">
+                                </div><div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/NEDEANConv25-4.jpg" alt="SS_NEDEANConv25-4" loading="lazy">
+                                </div><div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/NEDEANConv25-5.jpg" alt="SS_NEDEANConv25-5" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>NEDEAN Convention - Feb 2025</p>
+                    </div>
+                    <!-- Principal Bahria University -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper dawlance-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Bahria-1.jpg" alt="Bahria-1" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Bahria-2.jpg" alt="Bahria-2" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Bahria-3.jpg" alt="Bahria-3" loading="lazy">
+                                </div>
+                                </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>Principal Bahria University HHRCM Lab visit - June 2025</p>
+                        </div>
+
+                    <!-- Dawlance Collaboration -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper dawlance-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Dawlance-4.jpg" alt="SS_Dawlance-4" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Dawlance-2.jpg" alt="SS_Dawlance-2" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Dawlance-1.jpg" alt="SS_Dawlance-1" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Dawlance-3.jpg" alt="SS_Dawlance-3" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>Delegation from Dawlance - June 2025</p>
+                    </div>
+                    <!-- BIT Collaboration -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper bit-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/BIT-1.jpg" alt="SS_BIT-1" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>Dignitaries from Beijing Institute of Technology - March 2025</p>
+                    </div>
+                    <!-- Row 3 -->
+                    <!-- S.M. KATI Collaboration -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper kati-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/S_M_KATI-1.jpg" alt="SS_S.M_KATI-1" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/S_M_KATI-2.jpg" alt="SS_S.M_KATI-2" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>Mr. Salman Sabri and Mrs. Salman visit and collaboration with HHRCM Lab - June 2023</p>
+                    </div>
+                    <!-- Madhias Fw Collaboration -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper madhias-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Madihas-Fw-1.jpg" alt="Research Associate Madiha's Farewell - January 2025" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Madihas-Fw-2.jpg" alt="Research Associate Madiha's Farewell - January 2025" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>Research Associate Madiha's Farewell - January 2025</p>
+                    </div>
+                    <!-- E-BEX Collaboration -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper ebex-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/Ebex-1.jpg" alt="SS_Ebex-1" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>Collaboration with CIO Auvitronics Mr. Abbas ul Hussain and E-BEX cooperation - May 2023</p>
+                    </div>
+                    <!-- MEB SPT Collaboration -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper meb-spt-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/MEB-SPT.jpg" alt="SS_MEB-SPT" loading="lazy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/MEB-SPT-2.jpg" alt="SS_MEB-SPT-2" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>CEO MEB Mr. Babar Khan and team Multinational Export Bureau - July 2023 </p>
+                    </div>
+                    <!-- Row 4 -->
+                    <!-- Patel Hospital Collaboration -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper patel-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/PatelHospital-1.jpg" alt="SS_PatelHospital-1" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>Isntallation of Smart Oxygen Analyzer at Patel Hospital - April 2023</p>
+                    </div>
+                    <!-- FYP 23 -->
+                    <div class="col-lg-4 col-md-6 network-item isotope-item">
+                        <div class="swiper fyp-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/network/FYP23.jpg" alt="SS_FYP23" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <p>Final Year Project Students Evaluation - August 2023</p>
+                    </div>
+                    <!-- Row 5 (Empty) -->
+                    <div class="col-lg-4 col-md-6"></div>
+                    <div class="col-lg-4 col-md-6"></div>
+                    <div class="col-lg-4 col-md-6"></div>
+                </div>
             </div>
         </section>
         <!-- Contact Section -->
@@ -309,12 +675,11 @@
             </div>
         </section>
     </main>
-    <footer id="footer" class="footer accent-background">
+    <footer id="footer" class="footer">
         <div class="container">
-            <div class="copyright text-center">
-                <p>© <span>Copyright</span> <strong class="px-1 sitename">Humayun Khan</strong> <span>All Rights Reserved</span></p>
-            </div>
-            <div class="social-links d-flex justify-content-center">
+            <div class="date-time">06:07 PM PKT on Monday, June 23, 2025</div>
+            <div class="copyright">© Copyright Humayun Khan 2025. All Rights Reserved</div>
+            <div class="social-links">
                 <a href="https://www.linkedin.com/in/humayunnaveedkhan" target="_blank"><i class="bi bi-linkedin"></i></a>
                 <a href="https://www.facebook.com/NCRANEDUET" target="_blank"><i class="bi bi-facebook"></i></a>
                 <a href="https://humayunnaveedkhan.github.io/portfolio" target="_blank"><i class="bi bi-github"></i></a>
@@ -330,16 +695,16 @@
     <div id="preloader"></div>
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js" defer></script>
+    <script src="assets/vendor/aos/aos.js" defer></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
     <!-- Custom JS -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -352,6 +717,52 @@
                         setTimeout(() => preloader.style.display = 'none', 500);
                     }, 500);
                 }
+            });
+
+            // Initialize Swiper for each network item
+            const swipers = [
+                '.fpcci-swiper',
+                '.shec-swiper',
+                '.ebex-swiper',
+                '.nedean-swiper',
+                '.dawlance-swiper',
+                '.bit-swiper',
+                '.kati-swiper',
+                '.madhias-swiper',
+                '.meb-spt-swiper',
+                '.nic-swiper',
+                '.patel-swiper',
+                '.fyp-swiper'
+            ];
+            swipers.forEach(selector => {
+                if (document.querySelector(selector)) {
+                    new Swiper(selector, {
+                        loop: true,
+                        speed: 600,
+                        slidesPerView: 1,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true
+                        },
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev'
+                        },
+                        autoplay: {
+                            delay: 5000,
+                            disableOnInteraction: false
+                        }
+                    });
+                }
+            });
+
+            // Refresh Isotope layout after Swiper initialization
+            const iso = new Isotope('.isotope-container', {
+                itemSelector: '.network-item',
+                layoutMode: 'masonry'
+            });
+            imagesLoaded('.isotope-container', function () {
+                iso.layout();
             });
         });
     </script>
