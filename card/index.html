@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Humayun Khan — Digital Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08090c;
+    --panel:#0d0f14;
+    --ink:#f4f6fb;
+    --muted:#8a92a6;
+    --faint:#565d70;
+    --accent:#7ea8e6;
+    --accent-soft:#9dbef0;
+    --line:rgba(255,255,255,0.07);
+    --line-strong:rgba(255,255,255,0.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{background:var(--bg);}
+  body{
+    min-height:100vh;
+    font-family:'Sora',sans-serif;
+    color:var(--ink);
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:0;
+  }
+  /* atmospheric glows */
+  .stage{
+    position:relative;
+    width:100%;
+    max-width:440px;
+    min-height:100vh;
+    background:var(--bg);
+    overflow:hidden;
+    padding:56px 30px 40px;
+  }
+  .stage::before{
+    content:"";
+    position:absolute;
+    top:-160px;right:-120px;
+    width:360px;height:360px;
+    background:radial-gradient(circle, rgba(126,168,230,0.20), transparent 65%);
+    filter:blur(20px);
+    pointer-events:none;
+  }
+  .stage::after{
+    content:"";
+    position:absolute;
+    bottom:-140px;left:-140px;
+    width:340px;height:340px;
+    background:radial-gradient(circle, rgba(126,168,230,0.08), transparent 65%);
+    filter:blur(20px);
+    pointer-events:none;
+  }
+  .inner{position:relative;z-index:2;}
+
+  /* fade-up load animation */
+  .fx{opacity:0;transform:translateY(14px);animation:up .7s cubic-bezier(.2,.7,.2,1) forwards;}
+  @keyframes up{to{opacity:1;transform:translateY(0);}}
+
+  .tagline{
+    font-family:'Dancing Script',cursive;
+    font-size:34px;
+    color:var(--accent-soft);
+    text-align:right;
+    line-height:1;
+    letter-spacing:.5px;
+    opacity:0;
+    animation:up .8s ease forwards .05s;
+  }
+
+  .brandrow{
+    display:flex;align-items:center;gap:10px;
+    margin-top:38px;
+    animation-delay:.1s;
+  }
+  .brandrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);}
+  .brandrow span{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--faint);
+  }
+
+  h1{
+    font-size:46px;
+    font-weight:700;
+    letter-spacing:-1.5px;
+    line-height:1.02;
+    margin-top:16px;
+    animation-delay:.16s;
+  }
+  .role{
+    font-size:17px;
+    font-weight:500;
+    color:var(--accent-soft);
+    margin-top:14px;
+    animation-delay:.22s;
+  }
+  .desig{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.5px;
+    color:var(--muted);
+    margin-top:6px;
+    animation-delay:.26s;
+  }
+
+  .hr{height:1px;background:var(--line);margin:30px 0;animation-delay:.3s;}
+
+  /* contact rows */
+  .contacts{display:flex;flex-direction:column;gap:2px;}
+  .row{
+    display:flex;align-items:center;gap:16px;
+    padding:14px 6px;
+    text-decoration:none;
+    color:var(--ink);
+    border-bottom:1px solid var(--line);
+    transition:padding-left .25s ease, background .25s ease;
+  }
+  .row:last-child{border-bottom:none;}
+  .row:active{background:rgba(126,168,230,0.07);padding-left:12px;}
+  @media(hover:hover){.row:hover{background:rgba(126,168,230,0.06);padding-left:12px;}}
+  .ic{
+    flex:0 0 40px;height:40px;border-radius:11px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--panel);border:1px solid var(--line-strong);
+    color:var(--accent);
+  }
+  .ic svg{width:18px;height:18px;}
+  .txt{display:flex;flex-direction:column;min-width:0;}
+  .txt .lab{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);margin-bottom:3px;}
+  .txt .val{font-size:14.5px;font-weight:400;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .txt .val.two{white-space:normal;line-height:1.35;font-size:13.5px;}
+  .arrow{margin-left:auto;color:var(--faint);flex:0 0 auto;}
+  .arrow svg{width:15px;height:15px;}
+
+  .contacts.d1{animation-delay:.34s;}
+  .links.d2{animation-delay:.42s;}
+
+  .sec-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--faint);
+    margin:26px 6px 8px;
+  }
+
+  /* save button */
+  .save{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;margin-top:30px;padding:17px;
+    background:var(--accent);
+    color:#07131f;
+    border:none;border-radius:14px;
+    font-family:'Sora',sans-serif;font-size:15px;font-weight:600;letter-spacing:.2px;
+    cursor:pointer;
+    box-shadow:0 10px 30px -10px rgba(126,168,230,0.55);
+    transition:transform .15s ease, box-shadow .2s ease;
+    animation-delay:.5s;
+  }
+  .save svg{width:19px;height:19px;}
+  .save:active{transform:scale(.98);box-shadow:0 6px 18px -10px rgba(126,168,230,0.5);}
+
+  footer{
+    text-align:center;margin-top:30px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:9.5px;letter-spacing:1px;line-height:1.7;text-transform:uppercase;color:var(--faint);
+    animation-delay:.56s;
+  }
+</style>
+</head>
+<body>
+  <main class="stage">
+    <div class="inner">
+      <div class="tagline">Let's Innovate</div>
+
+      <div class="brandrow fx"><span class="dot"></span><span>NCRA · NEDUET</span></div>
+
+      <h1 class="fx">Humayun<br>Khan</h1>
+      <div class="role fx">IIoT &amp; Embedded Systems Engineer</div>
+      <div class="desig fx">Team Lead — NCRA NEDUET · Co-Founder, Haptronica</div>
+
+      <div class="hr fx"></div>
+
+      <!-- CONTACT -->
+      <div class="contacts d1 fx">
+        <a class="row" href="tel:+923160121324">
+          <span class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <span class="txt"><span class="lab">Call</span><span class="val">+92 316 0121324</span></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+        </a>
+
+        <a class="row" href="mailto:humayunnaveedkhan@gmail.com">
+          <span class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          </span>
+          <span class="txt"><span class="lab">Email</span><span class="val two">humayunnaveedkhan@gmail.com<br>humayunkhan@neduet.edu.pk</span></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+        </a>
+      </div>
+
+      <!-- LINKS -->
+      <div class="sec-label fx" style="animation-delay:.38s">Links</div>
+      <div class="links d2 fx">
+        <div class="contacts">
+          <a class="row" href="https://www.linkedin.com/in/humayunnaveedkhan" target="_blank" rel="noopener">
+            <span class="ic">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            </span>
+            <span class="txt"><span class="lab">LinkedIn</span><span class="val">in/humayunnaveedkhan</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+          </a>
+
+          <a class="row" href="https://github.com/HumayunNaveedKhan" target="_blank" rel="noopener">
+            <span class="ic">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+            </span>
+            <span class="txt"><span class="lab">GitHub</span><span class="val">HumayunNaveedKhan</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+          </a>
+
+          <a class="row" href="https://humayunnaveedkhan.github.io/portfolio" target="_blank" rel="noopener">
+            <span class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9S14.5 18.5 12 21C9.5 18.5 8.2 15.3 8.2 12S9.5 5.5 12 3z"/></svg>
+            </span>
+            <span class="txt"><span class="lab">Portfolio</span><span class="val">humayunnaveedkhan.github.io/portfolio</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+          </a>
+
+          <a class="row" href="https://ncra.neduet.edu.pk" target="_blank" rel="noopener">
+            <span class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M12 11V7a4 4 0 0 0-8 0M12 16v.01"/><path d="M9 3h6l1 4H8z"/></svg>
+            </span>
+            <span class="txt"><span class="lab">Research Lab</span><span class="val">ncra.neduet.edu.pk</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- SAVE -->
+      <button class="save fx" id="saveBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+        Save to Contacts
+      </button>
+
+      <footer class="fx">
+        Haptics, Human-Robotics &amp; Condition Monitoring Lab<br>NCRA · NEDUET
+      </footer>
+    </div>
+  </main>
+
+<script>
+  document.getElementById('saveBtn').addEventListener('click', function(){
+    const vcard = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "N:Khan;Humayun;;;",
+      "FN:Humayun Khan",
+      "ORG:NCRA NEDUET",
+      "TITLE:IIoT & Embedded Systems Engineer | Team Lead - NCRA NEDUET",
+      "TEL;TYPE=CELL:+923160121324",
+      "EMAIL;TYPE=WORK:humayunkhan@neduet.edu.pk",
+      "EMAIL;TYPE=HOME:humayunnaveedkhan@gmail.com",
+      "URL:https://humayunnaveedkhan.github.io/portfolio",
+      "URL:https://github.com/HumayunNaveedKhan",
+      "URL:https://www.linkedin.com/in/humayunnaveedkhan",
+      "URL:https://ncra.neduet.edu.pk",
+      "END:VCARD"
+    ].join("\r\n");
+    const blob = new Blob([vcard], {type:"text/vcard"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = "Humayun-Khan.vcf";
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+</script>
+</body>
+</html>
